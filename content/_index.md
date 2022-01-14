@@ -18,7 +18,7 @@ Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Softw
 - NLP and Computer Vision
 - Raspberry Pi
   - Infact, thinking of making a homelab kubernetes cluster with few Pis
-- Challanging Problem Solving
+- Problem Solving
 
 ### My Contacts
 
