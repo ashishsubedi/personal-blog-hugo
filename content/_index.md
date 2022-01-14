@@ -3,7 +3,7 @@ title: "Home"
 date: 2022-01-12T23:55:25+05:45
 ---
 
-Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Software Engineer at certain company/companies. Also, in a final year of my undergraduate in **Computer Engineering** from Kathmandu University.
+Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Software Engineer . Also, in a final year of my undergraduate in **Computer Engineering** from Kathmandu University.
 
 ![Me](/images/me.jpg)
 

@@ -3,7 +3,7 @@ title: "About"
 publishDate: 2022-01-12T17:43:09+05:45
 ---
 
-Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Software Engineer at certain company/companies. Also, in a final year of my undergraduate in **Computer Engineering** from Kathmandu University.
+Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Software Engineer . Also, in a final year of my undergraduate in **Computer Engineering** from Kathmandu University.
 
 ![Me](/images/me.jpg)
 
@@ -18,7 +18,7 @@ Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Softw
 - NLP and Computer Vision
 - Raspberry Pi
   - Infact, thinking of making a homelab kubernetes cluster with few Pis
-- Challanging Problem Solving
+- Problem Solving
 
 ### My Contacts
 
