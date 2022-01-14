@@ -25,6 +25,8 @@
           {{ .Title }}
         </a>
       </h2>
+
+      <div class="date">{{ .PublishDate.Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</div>
     </li>
     {{ end }}
   </ul>

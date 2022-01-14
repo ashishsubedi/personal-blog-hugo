@@ -16,19 +16,20 @@ imaging:
   quality: 99
 
 params:
-  description: Personal Website of Ashish Subedi. Mostly static, with some few blogs and random stuffs that come along the way.
+  regularPages: 3
+  description: Personal Website of Ashish Subedi. Contains some blogs and random stuffs that come along the way.
   homeMetaContent: Some random Meta Content.
   footer: For those who reads footer :)
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: darkVapour
   katex: true
-  hideHeaderLinks: false
+  hideHeaderLinks: true
   search: true
   showThemeSwitcher: true
   defaultDarkTheme: false
-  moveFooterToHeader: false
-  # navTitleText: Cupper Theme
+  moveFooterToHeader: true
+  navTitleText: Ashish's Site
   logoAlt: Ashish's Site
   customCss:
     - css/custom_01.css
@@ -48,9 +49,6 @@ menu:
     - name: About
       url: /about/
       weight: 3
-    - name: RSS
-      url: /index.xml
-      weight: 5
 
 markup:
   defaultMarkdownHandler: goldmark
