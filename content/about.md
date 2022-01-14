@@ -3,7 +3,9 @@ title: "About"
 publishDate: 2022-01-12T17:43:09+05:45
 ---
 
-Let me introduce myself. I'm Ashish, currently a Junior Python Developer & Software Engineer . Also, a final year undergraduate in **Computer Engineering** from Kathmandu University.
+Hi! I'm Ashish, a Junior Python Developer and Software Engineer. I'm currently a final year student of undergraduate in Computer Engineering. 
+
+For those who came upon this in a drunken stupor and don't know where they are, this is my personal site where I will post about random things which may or may not be useful. So, I welcome you here, where everything is about me and I am the center of the world. Hope you enjoy the things that come from my mind!
 
 ![Me](/images/me.jpg)
 
