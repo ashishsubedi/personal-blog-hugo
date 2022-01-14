@@ -1,0 +1,40 @@
+---
+title: "Ashish's Site"
+baseURL: "https://asubedi.com.np/"
+theme: "zen"
+languageCode: "en-US"
+defaultContentLanguage: "en"
+pluralizelisttitles: false
+removePathAccents: true
+paginate: 10
+paginatePath: "page"
+rssLimit: 20
+author:
+  name: "Ashish Subedi"
+  url: "https://www.linkedin.com/in/ashish-s-4692b810b/"
+  avatar: "https://avatars.githubusercontent.com/u/10795351"
+
+outputFormats:
+  SearchIndex:
+    mediaType: "application/json"
+    baseName: "searchindex"
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home: ["HTML", "SearchIndex"]
+
+params:
+  contact: "iamashishsubedi@gmail.com"
+  copyright: "<!--Creative Commons License-->This site is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<!--/Creative Commons License-->"
+  description: "This is website for personal use of Ashish Subedi. Hopefully, it contains the blog posts, and some podcasts if I ever make one"
+  dateformat: "2 January, 2006"
+  footer: "Well, you do read footer it seems :)"
+  imageMaxWidth: 400
+  mobileMenu: true
+  poweredby: false
+  sidebar: true
+  submitted: true
+  logo: false
+  mainSections:
+    - "blog"
