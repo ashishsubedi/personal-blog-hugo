@@ -19,7 +19,7 @@ params:
   regularPages: 3
   description: Personal Website of Ashish Subedi. Contains some blogs and random stuffs that come along the way.
   homeMetaContent: Some random Meta Content.
-  footer: For those who reads footer :)
+  footer: For those who read footer :)
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: darkVapour
