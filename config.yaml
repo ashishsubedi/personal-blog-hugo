@@ -2,7 +2,7 @@ baseURL: https://asubedi.com.np/
 
 languageCode: en-us
 defaultContentLanguage: en
-title: Ashish's Site 
+title: Ashish's Site
 theme: cupper-hugo-theme
 enableGitInfo: true
 
@@ -18,10 +18,10 @@ imaging:
 params:
   description: Personal Website of Ashish Subedi. Mostly static, with some few blogs and random stuffs that come along the way.
   homeMetaContent: Some random Meta Content.
-  footer: For those who reads footer :) 
+  footer: For those who reads footer :)
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
-  codePenUser: darkVapour 
+  codePenUser: darkVapour
   katex: true
   hideHeaderLinks: false
   search: true
@@ -29,7 +29,7 @@ params:
   defaultDarkTheme: false
   moveFooterToHeader: false
   # navTitleText: Cupper Theme
-  logoAlt: Ashish's Site 
+  logoAlt: Ashish's Site
   customCss:
     - css/custom_01.css
     - css/custom_02.css
@@ -43,11 +43,11 @@ menu:
       url: /
       weight: 1
     - name: Blog
-      url: /posts/
-      weight: 3 
+      url: /blog/
+      weight: 2
     - name: About
       url: /about/
-      weight: 2 
+      weight: 3
     - name: RSS
       url: /index.xml
       weight: 5
