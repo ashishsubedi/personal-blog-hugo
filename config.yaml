@@ -6,6 +6,12 @@ title: Ashish's Site
 theme: cupper-hugo-theme
 enableGitInfo: true
 
+generator: "Custom"
+
+author:
+  name: Ashish Subedi
+  email: iamashishsubedi@gmail.com
+
 taxonomies:
   tag: Ashish Subedi
 
@@ -13,10 +19,9 @@ permalinks:
   post: /:filename/
 
 imaging:
-  quality: 99
+  quality: 90
 
 params:
-  regularPages: 3
   description: Personal Website of Ashish Subedi. Contains some blogs and random stuffs that come along the way.
   homeMetaContent: Personal Website of Ashish Subedi. Contains some blogs and random stuffs that come along the way.
   footer: :)
@@ -42,7 +47,10 @@ menu:
       weight: 2
     - name: About
       url: /about/
-      weight: 5
+      weight: 3
+    - name: RSS
+      url: /index.xml
+      weight: 4
 
 markup:
   defaultMarkdownHandler: goldmark
