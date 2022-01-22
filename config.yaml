@@ -13,7 +13,7 @@ author:
   email: iamashishsubedi@gmail.com
 
 taxonomies:
-  tag: Ashish Subedi
+  tag: tags
 
 permalinks:
   post: /:filename/
