@@ -4,8 +4,9 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=canonical href=https://asubedi.com.np/ashish-subedi/>
-<meta name=description content="Ashish Subedi">
+<link rel=canonical href=https://asubedi.com.np/blog/how-i-come-with-insta-caption-python-scrapy/>
+<meta name=description content="Note: This is an article I wrote a while back. Enjoy
+ Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code.">
 <link rel=apple-touch-icon sizes=180x180 href=https://asubedi.com.np/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://asubedi.com.np/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://asubedi.com.np/favicon-16x16.png>
@@ -17,7 +18,7 @@
 <style id=darkTheme>.intro-and-nav,.main-and-footer{filter:invert(100%)}*{background-color:inherit}img:not([src*=".svg"]),.colors,iframe,.demo-container{filter:invert(100%)}</style>
 <link rel=stylesheet href=/css/prism.css media=none onload="this.media='all'">
 <link rel=stylesheet type=text/css href=/css/styles.css>
-<title>Ashish Subedi | Ashish's Site</title>
+<title>How I come up with my instagram captions using Python and Scrapy | Ashish's Site</title>
 </head>
 <body>
 <a href=#main>skip to content</a>
@@ -47,7 +48,7 @@ Menu
 </a>
 </li>
 <li class=pattern>
-<a href=/blog/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/blog/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Blog</span>
 </a>
 </li>
@@ -77,9 +78,117 @@ dark theme: <input type=checkbox id=themer class=vh>
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>Ashish Subedi</h1>
-<ul class=patterns-list>
-</ul>
+<h1>How I come up with my instagram captions using Python and Scrapy</h1>
+<div class=date>
+<strong>Publish date: </strong>Jan 22, 2022
+<br>
+<strong>Last updated: </strong>Jan 22, 2022
+</div>
+<blockquote>
+<p>Note: This is an article I wrote a while back. Enjoy</p>
+</blockquote>
+<p>Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code. You can make your computer do the hard work for you ;)</p>
+<p>Now you understand the premise, let me make you clear about what I am going to write in this article. <a href=https://brainyquote.com>Brainy Quote</a> is the world’s largest quotation site. In Brainy Quote, you search for topics and it’ll give you relevant quotes. And we are going to use python to get the best caption for our picture.</p>
+<aside aria-label=warning class="note warning">
+<div><svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false"><use xlink:href="#warning"/></svg>
+<strong>Disclaimer: This article is only for educational purpose.</strong>
+</div>
+</aside>
+<p>As mentioned in the title, we are going to use python as our scraping language. There are many scraping tools and framework available in python and scrapy is one of the popular ones. Having a basic knowledge of python is helpful, but not strictly required but make sure <code>python 3.6+</code> is installed in your system (there are lots of tutorials available online) . We will be using other tools which I’ll show how to install as required.</p>
+<p>As writing this article, I am on python version 3.9.2. I am using linux for this tutorial. If you are in windows, you might want to install git(<a href=https://git-scm.com/downloads>https://git-scm.com/downloads</a>) and use its bash to run the commands. You can check your python version by running the following command in the terminal
+<pre class=cmd>
+  
+  <code>python -v</code>
+  
+</pre>
+</p>
+<p>I have made a new directory called “brainy_quotes_scrape” where I’ll be working from. Now before starting, we are going to make a virtual environment for this project. Virtual environment in python is python environment such that the python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments as well as from the system libraries as well. It is like starting from nothing other than bare python in the environment. This helps us to avoid packages version conflicts for future.</p>
+<p>You can create virtual environment as shown below</p>
+<pre class=cmd>
+  
+  <code>python -m venv venv</code>
+  
+</pre>
+<p>This command <code>python -m venv</code> executes a venv module and create a virtual environment in directory called <strong>venv</strong>. Now activate virtual environment.</p>
+<pre class=cmd>
+  
+  <code>source ./venv/bin/activate (For linux &amp; mac)</code>
+  
+  <code>venv\Scripts\activate.bat (For Windows)</code>
+  
+</pre>
+<p>You should see (venv) on left side of your terminal.</p>
+<p>Now let&rsquo;s install scrapy and get started!
+<pre class=cmd>
+  
+  <code>pip install Scrapy</code>
+  
+  <code>scrapy startproject brainy_quotes .</code>
+  
+</pre>
+Running the above command creates a scrapy project in the same directory. Now we are going to create a basic spider that scrapes data from Brainy Quotes. Open the current directory in your favorite code editor. I am using <a href=https://code.visualstudio.com/>VS Code</a> for this.
+<pre class=cmd>
+  
+  <code>scrapy genspider brainy_quotes_spider brainyquotes.com</code>
+  
+</pre>
+This commands generates a spider named brainy_quotes_spider and adds the following codes inside &lsquo;brainy_quotes/spiders/brainy_quotes_spider.py&rsquo;</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/spider.png alt=SpiderClass></p>
+<p>Replace the line 10 with</p>
+<pre><code class=language-python>print('Response',response)
+</code></pre>
+<p>Now run in terminal
+<pre class=cmd>
+  
+  <code>scrapy crawl brainy_quotes_spider</code>
+  
+</pre>
+You should see some jibberis in your terminal. If you look carefully, you&rsquo;ll find something of this sort.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/jibberish.png alt=Jibberish></p>
+<p>And that is the print statement we wrote in line 10. parse method gets the response of from the url we provide. Great. Now let&rsquo;s look at the url of search page in Brainy Quotes.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/url.png alt=URL></p>
+<p>As you can see, tree is the keyword we told it to search for. And it separates multiple keywords by &lsquo;+&rsquo;. This is great news for us.</p>
+<p>Now, time to code.</p>
+<iframe src=https://carbon.now.sh/embed/kf4oiWOHLgpXks0qH4DO style=width:664px;height:558px;border:0;transform:scale(1);overflow:hidden sandbox="allow-scripts allow-same-origin"></iframe>
+<p>We hae made quite a few changes. We removed start urls and used start_requests method to generate url based on user input keywords. Keywords can be passed as an argument when running the spider command.</p>
+<p>
+<pre class=cmd>
+  
+  <code>scrapy crawl brainy_quotes_spider -a keywords=&#34;tree landscapes&#34;</code>
+  
+</pre>
+Now for this part</p>
+<pre><code class=language-python>keywords = '+'.join(keywords.split(' '))
+</code></pre>
+<p>This first splits the keywords by space and make it into list of keywords (in example, list contains [‘tree’,’landscapes’] ) and we join it using ‘+’ sign. Running the spider, you can see the url printed out in the terminal.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/first_crawl.png alt=first_crawl></p>
+<p>This is the same url as of the search page.</p>
+<p>Time to dig again in Brainy quotes search page. Now to find the quotes in the page, we need to study a little bit about website structure. We need to use Developer Tools or Inspect Element of the browser. I am using firefox for this, but you can use chrome and any chromium based browsers as well.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/inspect.png alt=inspect></p>
+<p>As we can see, all the quotes are under the div field with an id of quotesList. Let’s search for other components.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/inspect2.png alt=inspect2></p>
+<p>Great! We found our quote as well as the author. If we look at other quotes, it follows the same pattern.</p>
+<p>As searching for patterns, we can see that the quote and the author are both <code>&lt;a></code> tag children of div with class clearfix. So now do let’s this in code.</p>
+<iframe src=https://carbon.now.sh/embed/VHoSiJ862H7gOrSnX8ni style=width:715px;height:652px;border:0;transform:scale(1);overflow:hidden sandbox="allow-scripts allow-same-origin"></iframe>
+<p>Look at the parse method. First we get the elements that contains quotes and authors. As we saw previously, we selected all div tags with class clearfix. After that, we iterate over all these divs. For each item, that is the node, we extract the quote text and author name. Notice that we use title attribute present in <code>&lt;a></code> tag. This makes it easier to extract text and author. Now run the spider using</p>
+<pre class=cmd>
+  
+  <code>scrapy crawl brainy_quotes_spider -a keywords=&#34;tree landscapes&#34;</code>
+  
+</pre>
+<p>You can see the quotes and author names printed in the terminal.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/result1.png alt=result1></p>
+<p>Now the process to choose instagram caption. Well, I leave that upto the random chance. Yes, that’s right, we are going to pick a random quote and use it.</p>
+<iframe src=https://carbon.now.sh/embed/jWdgBGUxDWrFfx35uvLW style=width:715px;height:819px;border:0;transform:scale(1);overflow:hidden sandbox="allow-scripts allow-same-origin"></iframe>
+<p>We used python’s built-in random module to choose one of the quote from the quotesList.</p>
+<pre class=cmd>
+  
+  <code>scrapy crawl brainy_quotes_spider -a keywords=&#34;tree landscapes&#34;</code>
+  
+</pre>
+<p>Running the above code gives this. Your result may vary.</p>
+<p><img src=/images/how-i-come-with-insta-caption-python-scrapy/result.png alt=result></p>
+<p>This is how I choose caption for my instagram captions</p>
 </main>
 </div>
 </div>
