@@ -3,7 +3,8 @@ title: "About"
 publishDate: 2022-01-12T17:43:09+05:45
 ---
 
-Hi! I'm Ashish, a Junior Python Developer and Software Engineer. I'm currently a final year student of undergraduate in Computer Engineering. 
+
+Hi! I'm Ashish, a Python Developer and Software Engineer. I graduated as a Computer Engineer from Kathmandu University in 2022 (2021 technically). 
 
 For those who came upon this in a drunken stupor and don't know where they are, this is my personal site where I will post about random things which may or may not be useful. So, I welcome you here, where everything is about me and I am the center of the world. Hope you enjoy the things that come from my mind!
 
@@ -18,9 +19,8 @@ For those who came upon this in a drunken stupor and don't know where they are, 
 - Devops
 - Database Optimization
 - NLP and Computer Vision
-- Raspberry Pi
-  - Infact, thinking of making a homelab kubernetes cluster with few Pis
 - Problem Solving
+- Currently interested in distributed task queues inner workings
 
 ### My Contacts
 
