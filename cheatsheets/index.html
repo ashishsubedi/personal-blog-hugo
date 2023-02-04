@@ -4,10 +4,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=canonical href=https://asubedi.com.np/blog/make-pyenv-life-easier/>
-<meta name=description content="Intro Hello everyone, it’s been such a long time since my last blog. Life’s been busy and have not been able to update the blog as I thought I would. Anyway, new post incoming.
-Unlike every other people on the planet, I use pyenv virtualenv to create virtualenv. Reasons:
- For me is to easily switch between python version depending on the repo, as my workplace maintains repos with 2 python versions.">
+<link rel=canonical href=https://asubedi.com.np/cheatsheets/>
+<meta name=description content="Cheatsheets">
 <link rel=apple-touch-icon sizes=180x180 href=https://asubedi.com.np/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://asubedi.com.np/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://asubedi.com.np/favicon-16x16.png>
@@ -19,7 +17,7 @@ Unlike every other people on the planet, I use pyenv virtualenv to create virtua
 <style id=darkTheme>.intro-and-nav,.main-and-footer{filter:invert(100%)}*{background-color:inherit}img:not([src*=".svg"]),.colors,iframe,.demo-container{filter:invert(100%)}</style>
 <link rel=stylesheet href=/css/prism.css media=none onload="this.media='all'">
 <link rel=stylesheet type=text/css href=/css/styles.css>
-<title>Making My Life Easier with Bash/Zsh Function | Ashish's Site</title>
+<title>Cheatsheets | Ashish's Site</title>
 </head>
 <body>
 <a href=#main>skip to content</a>
@@ -49,7 +47,7 @@ Menu
 </a>
 </li>
 <li class=pattern>
-<a href=/blog/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/blog/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Blog</span>
 </a>
 </li>
@@ -59,7 +57,7 @@ Menu
 </a>
 </li>
 <li class=pattern>
-<a href=/cheatsheets/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/cheatsheets/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Cheatsheets</span>
 </a>
 </li>
@@ -84,98 +82,34 @@ dark theme: <input type=checkbox id=themer class=vh>
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>Making My Life Easier with Bash/Zsh Function</h1>
-<div class=date>
-<strong>Publish date: </strong>Jan 14, 2023
-<br>
-<strong>Last updated: </strong>Jan 14, 2023
-</div>
-<h3 id=intro>Intro</h3>
-<p>Hello everyone, it&rsquo;s been such a long time since my last blog. Life&rsquo;s been busy and have not been able to update the blog as I thought I would. Anyway, new post incoming.</p>
-<p>Unlike every other people on the planet, I use <code>pyenv virtualenv</code> to create virtualenv. Reasons:</p>
-<ul>
-<li>For me is to easily switch between python version depending on the repo, as my workplace maintains repos with 2 python versions.</li>
-<li>Also, I like how venv is separate from the main codebase.</li>
-</ul>
-<p>One drawback is that you have to remember the name of the venv that you need for the repo. To overcome this drawback, I started naming my venv with the name of the directory I&rsquo;m currently working on.</p>
-<p>This worked good, but everytime I need to activate my venv in different repo (happens everytime), it gets tedious to write <code>pyenv activate &lt;name></code>.</p>
-<p>So I wrote this bash/zsh function to make my life easier. Bonus, also added initialization for <a href=https://pre-commit.com/><code>pre-commit</code></a> if it doesn&rsquo;t exist, because I forget to do that more often than not.</p>
-<h3 id=working>Working</h3>
-<ul>
+<h1>Cheatsheets</h1>
+<input id=search type=text placeholder="Search by title..." aria-label="Search by title">
+<ul class=patterns-list id=list>
 <li>
-<p>This function activates the virtual env based on the directory name or uses the name passed.</p>
+<h2>
+<a href=/cheatsheets/gcloud/><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
+Gcloud
+</a>
+</h2>
+<div class=date>Feb 5, 2023</div>
 </li>
 <li>
-<p>In addition, it also checks if pre-commits is installed, and installs if not.</p>
+<h2>
+<a href=/cheatsheets/docker/><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
+Docker
+</a>
+</h2>
+<div class=date>Feb 5, 2023</div>
 </li>
 <li>
-<p>Assumes pyenv and pip commands are available</p>
+<h2>
+<a href=/cheatsheets/kubernetes/><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
+Kubernetes
+</a>
+</h2>
+<div class=date>Feb 4, 2023</div>
 </li>
-<li>
-<p>In <code>~/.bashrc</code> or <code>~/.zshrc</code></p>
-</li>
 </ul>
-<pre><code>### Activate virtual env based on the directory name
-# Install precommit if not installed
-#
-ve() {
-    # only do this in git directory
-    local git_root=$(git rev-parse --show-toplevel 2&gt;&amp;1)
-    local dir_name=&quot;$1&quot;
-    # Check if git repo
-    if [[ -z &quot;${dir_name}&quot; &amp;&amp; &quot;$git_root&quot; == *&quot;fatal&quot;* ]]; then
-	    echo &quot;Not a git directory, ignoring...&quot;
-	    return 0
-    fi
-    local dir_name=$(basename $git_root)
-    local venv=&quot;${1:-$dir_name}&quot;
-
-    # If not already in virtualenv
-    if [ -z &quot;${VIRTUAL_ENV}&quot; ]; then
-        echo &quot;Trying to activate virtual environment  ${venv}, activating...&quot;
-	pyenv activate $venv
-    elif [[ &quot;${VIRTUAL_ENV}&quot; != ${venv} ]]; then
-	local exists=$(pyenv virtualenvs | grep $(basename $venv))
-	if [[ &quot;$exists&quot; ]]; then
-    		echo &quot;Activating virtual environment, ${venv}...&quot;
-		pyenv deactivate
-		pyenv activate $venv
-	else
-		echo &quot;Virtualenv ${venv} doesn't exist, continuing with same virtualenv...&quot;
-	fi
-    else
-        echo &quot;Already in a virtual environment ${dir_name}!&quot;
-    fi
-    ##
-    if [[ &quot;$git_root&quot; == *&quot;fatal&quot;* ]]; then
-	    echo &quot;Not a git directory, ignoring pre-commit...&quot;
-	    return 0
-    fi
-    local pre_commit=$(ls $git_root/.git/hooks | grep -x &quot;pre-commit\$&quot;)
-
-    if [ -z &quot;$pre_commit&quot; ]; then
-	    echo &quot;Installing pre-commit, please wait...&quot;
-	    pip install pre-commit  &gt; /dev/null 2&gt;&amp;1
-	    pre-commit install
-	    echo &quot;Installation complete...&quot;
-    else
-	    echo &quot;Pre-commit already installed...&quot;
-
-    fi
-}
-</code></pre>
-<h3 id=usage>Usage</h3>
-<ul>
-<li>Typing <code>ve</code> in terminal runs this function whenever you need to activate virtualenv based on the current directory name</li>
-<li>Typing <code>ve &lt;venv_name></code> to activate the given <code>&lt;venv_name></code> virtualenv.</li>
-</ul>
-<h3 id=limitation>Limitation</h3>
-<ul>
-<li>Doesn&rsquo;t create new virtualenv if it cannot find</li>
-<li>Might have some bugs</li>
-</ul>
-<h3 id=ending-note>Ending Note</h3>
-<p>I&rsquo;ve been using this for while now, and I find it really useful. This definitely has made my life easier and saves me 2 seconds of my time XD. Well, that&rsquo;s it folks, hope you have a great one. See ya!</p>
 </main>
 </div>
 </div>
