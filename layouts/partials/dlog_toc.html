@@ -1,0 +1,6 @@
+{{ $section := .Page.Section }}
+{{ range where .Site.Pages "Section" $section }}
+    {{ if .Params.toc }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+{{ end }}

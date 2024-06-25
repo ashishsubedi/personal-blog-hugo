@@ -1,0 +1,27 @@
+
+{{ define "dlog-toc" }}
+  {{ if eq .Params.toc true }}
+  <ul class="toc" style="margin-left: 0;">
+    <h3>Contents</h3>
+    {{ $dlog := .Site.GetPage "section" "dlog" }}
+    {{ template "toc-list" $dlog }}
+</ul>
+
+ {{ end }}
+
+{{ end }}
+
+
+{{ define "toc-list" }}
+<ul>
+    {{ range .Pages }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <!-- Recursively render sub-sections -->
+            {{ if .IsSection }}
+                {{ template "toc-list" . }}
+            {{ end }}
+        </li>
+    {{ end }}
+</ul>
+{{ end }}
