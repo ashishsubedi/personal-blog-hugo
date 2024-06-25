@@ -51,9 +51,12 @@ menu:
     - name: Cheatsheets
       url: /cheatsheets/
       weight: 4
+    - name: Dev Logs
+      url: /dlog/
+      weight: 5
     - name: RSS
       url: /index.xml
-      weight: 5
+      weight: 6
 
 markup:
   defaultMarkdownHandler: goldmark

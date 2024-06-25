@@ -1,17 +1,19 @@
 {{ define "main" }}
   <main id="main">
+
     <h1>{{ .Title }}</h1>    
     <div class="date">
       {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
       {{ $publishDate := .PublishDate }}
       <strong>{{ T "publish_date" }} </strong>{{ $publishDate.Format $dateFormat }}
       {{ with .Lastmod }}
-        {{ if gt . $publishDate }}
+      {{ if gt . $publishDate }}
           <br>
           <strong>{{ T "last_updated" }} </strong>{{ .Format $dateFormat }}
-        {{ end }}
-      {{ end }}
-    </div>
-    {{ .Content }}
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ template "dlog-toc" . }}
+        {{ .Content }}
   </main>
 {{ end }}
