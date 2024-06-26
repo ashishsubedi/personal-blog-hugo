@@ -9,7 +9,9 @@ on:
     branches:
       - main
       - delpoy
-    
+      
+permissions:
+  contents: write
 
 jobs:
   deploy:
