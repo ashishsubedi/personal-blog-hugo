@@ -4,8 +4,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=canonical href=https://asubedi.com.np/dlog/2024/june/25/>
-<meta name=description content="Beginning of my dev log, inspired from https://utsavdarlami.github.io/dlog/ .">
+<link rel=canonical href=https://asubedi.com.np/dlog/2024/july/12/>
+<meta name=description content="Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same.">
 <link rel=apple-touch-icon sizes=180x180 href=https://asubedi.com.np/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://asubedi.com.np/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://asubedi.com.np/favicon-16x16.png>
@@ -17,7 +17,7 @@
 <style id=darkTheme>.intro-and-nav,.main-and-footer{filter:invert(100%)}*{background-color:inherit}img:not([src*=".svg"]),.colors,iframe,.demo-container{filter:invert(100%)}</style>
 <link rel=stylesheet href=/css/prism.css media=none onload="this.media='all'">
 <link rel=stylesheet type=text/css href=/css/styles.css>
-<title>June 25 | Ashish's Site</title>
+<title>July 12 | Ashish's Site</title>
 <script>!function(e,a){var d,b,c,f;a.__SV||(window.posthog=a,a._i=[],a.init=function(j,i,h){function k(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]),a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}(c=e.createElement("script")).type="text/javascript",c.async=!0,c.src=i.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(f=e.getElementsByTagName("script")[0]).parentNode.insertBefore(c,f);var g=a;for(void 0!==h?g=a[h]=[]:h="posthog",g.people=g.people||[],g.toString=function(b){var a="posthog";return"posthog"!==h&&(a+="."+h),b||(a+=" (stub)"),a},g.people.toString=function(){return g.toString(1)+".people (stub)"},d="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),b=0;b<d.length;b++)k(g,d[b]);a._i.push([j,i,h])},a.__SV=1)}(document,window.posthog||[]),posthog.init('phc_BOAEE4GfbeP82ajblLje3rRalycb27srENy5uInY3FB',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'})</script>
 </head>
 <body>
@@ -88,42 +88,45 @@ dark theme: <input type=checkbox id=themer class=vh>
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>June 25</h1>
+<h1>July 12</h1>
 <div class=date>
-<strong>Publish date: </strong>Jun 25, 2024
+<strong>Publish date: </strong>Jul 12, 2024
 <br>
-<strong>Last updated: </strong>Jun 26, 2024
+<strong>Last updated: </strong>Jul 12, 2024
 </div>
-<ul class=toc style=margin-left:0>
-<h3>Contents</h3>
-<ul>
-<li>
-<a href=/dlog/2024/>2024</a>
-<ul>
-<li>
-<a href=/dlog/2024/july/12/>July 12</a>
-</li>
-<li>
-<a href=/dlog/2024/june/>June</a>
-<ul>
-<li>
-<a href=/dlog/2024/june/26/>June 26</a>
-</li>
-<li>
-<a href=/dlog/2024/june/25/>June 25</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href=/dlog/2023/>2023</a>
-<ul>
-</ul>
-</li>
-</ul>
-</ul>
-<p>Beginning of my dev log, inspired from <a href=https://utsavdarlami.github.io/dlog/>https://utsavdarlami.github.io/dlog/</a> .</p>
+<p>Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.</p>
+<pre><code class=language-python>example = {
+  &quot;key1&quot;: {
+    &quot;key2&quot;: {
+      &quot;key3&quot;: [
+        {
+          &quot;key4&quot;: {
+            &quot;required&quot;: &quot;value&quot;
+          }
+        }
+      ]
+    }
+  }
+}
+
+</code></pre>
+<p>Let&rsquo;s say we have multiple variants of the json with similar structure where you need to get the <code>required</code> value. One way to do it would be to directly get the data from the dict.</p>
+<pre><code class=language-python>example[&quot;key1&quot;][&quot;key2&quot;][&quot;key3&quot;][0][&quot;key4&quot;][&quot;required&quot;]
+</code></pre>
+<p>While this is totally fine, doing this for many variation is tedious.</p>
+<p>The following function I think is very good approach to make it easier.</p>
+<pre><code class=language-python>from functools import reduce
+def get_value_from_dict(data: dict, path: Iterable[str | int]) -&gt; Any:
+    return reduce(lambda curr, key: curr[key], path, data)
+
+
+</code></pre>
+<p>And then function is called as below</p>
+<pre><code class=language-python>
+get_value_from_dict(example, (&quot;key1&quot;, &quot;key2&quot;, &quot;key3&quot;, 0, &quot;key4&quot;, &quot;required&quot;))
+
+</code></pre>
+<p>which I believe looks much cleaner and less tedious compared to previous approach.</p>
 </main>
 </div>
 </div>
