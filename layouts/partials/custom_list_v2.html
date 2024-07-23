@@ -1,0 +1,43 @@
+
+{{ define "dlog-toc-v2" }}
+  {{ if eq .Params.toc true }}
+  <style>
+      .current-page {
+      font-weight: bold;
+      font-size: large;
+  }
+  
+  </style>
+  <details class="toc" style="margin-left: 0;" open="true" >
+    <summary style="margin: auto;">Contents</summary>
+        {{ $dlog := .Site.GetPage "section" "dlog" }}
+        {{ template "toc-list-v2" (dict "Pages" $dlog.Pages "CurrentPage" . "BasePermalink" .Permalink ) }}
+  </details>
+
+ {{ end }}
+
+{{ end }}
+
+{{ define "toc-list-v2" }}
+<ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
+    {{ range .Pages }}
+        <li>
+            {{ $isCurrentPage := eq .Permalink $.CurrentPage.Permalink }}
+            {{ $isInPath := strings.HasPrefix $.CurrentPage.Permalink .Permalink }}
+
+          
+            {{ if .IsSection }}
+                <details {{ if or $isCurrentPage $isInPath }}open{{ end }}>
+                    <summary><a href="{{ .RelPermalink }}" {{ if $isCurrentPage }}class="current-page"{{ end }}>{{ .LinkTitle }}</a></summary>
+                    <!-- Recursively render sub-sections -->
+                    {{ template "toc-list-v2" (dict "Pages" .Pages "CurrentPage" $.CurrentPage "BasePermalink" $.BasePermalink) }}
+                </details>
+            {{ else }}
+                <a href="{{ .RelPermalink }}" {{ if $isCurrentPage }}class="current-page"{{ end }}>{{ .LinkTitle }}</a>
+            {{ end }}
+
+        </li>
+    {{ end }}
+</ul>
+{{ end }}
+
