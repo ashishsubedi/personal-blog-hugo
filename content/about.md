@@ -3,10 +3,10 @@ title: "About"
 publishDate: 2022-01-12T17:43:09+05:45
 ---
 
+Welcome! I’m Ashish, a software engineer with around 4 years of experience specializing in backend and system design. My expertise extends to ML, AI, and LLMs, encompassing everything from traditional machine learning algorithms to complex deep neural networks.
 
-Hi! I'm Ashish, a Python Developer and Software Engineer. I graduated as a Computer Engineer from Kathmandu University in 2022 (2021 technically). 
 
-For those who came upon this in a drunken stupor and don't know where they are, this is my personal site where I will post about random things which may or may not be useful. So, I welcome you here, where everything is about me and I am the center of the world. Hope you enjoy the things that come from my mind!
+If you’ve stumbled here by chance or curiosity, welcome! This is my personal corner of the internet where I share a mix of thoughts and ideas—some practical, others just for fun. It’s a place for me to reflect on my experiences and interests, and I hope you find something that piques your interest as you browse around!
 
 ![Me](/images/me.jpg)
 
@@ -16,11 +16,8 @@ For those who came upon this in a drunken stupor and don't know where they are, 
 
 - Cloud Engineering/ Cloud Computing
 - Highly scalable and available systems
-- Devops
 - Database Optimization
-- NLP and Computer Vision
 - Problem Solving
-- Currently interested in distributed task queues inner workings
 
 ### My Contacts
 

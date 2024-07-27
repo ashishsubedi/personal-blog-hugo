@@ -2,8 +2,32 @@
   <main id="main">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+    
+    <h2><a href="/dlog">Recent Dev Logs</h2></a>
+    <ul class="patterns-list" id="list">
+      {{$dlogs := (where .Site.RegularPages "Type" "dlog")}} 
+      {{ range first 3 $dlogs }}
+      <li>
+        <h2>
+          <a href="{{ .RelPermalink }}">
+            <svg
+              class="bookmark"
+              aria-hidden="true"
+              viewBox="0 0 40 50"
+              focusable="false"
+            >
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            {{ .Title }}
+          </a>
+        </h2>
+  
+        <div class="date">{{ .PublishDate.Format ($.Site.Params.dateFormat | default "Jan 2, 2024") }}</div>
+      </li>
+      {{ end }}
+    </ul>
 
-    <h2> Recent Blogs</h2>
+    <h2> <a href="/blog">Recent Blogs</h2></a>
     <ul class="patterns-list" id="list">
       {{$blogs := (where .Site.RegularPages "Type" "blog")}} 
       {{ range first 3 $blogs }}
@@ -22,7 +46,7 @@
           </a>
         </h2>
   
-        <div class="date">{{ .PublishDate.Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</div>
+        <div class="date">{{ .PublishDate.Format ($.Site.Params.dateFormat | default "Jan 2, 2024") }}</div>
       </li>
       {{ end }}
     </ul>
