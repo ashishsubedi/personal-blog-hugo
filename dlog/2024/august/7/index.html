@@ -4,9 +4,9 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=canonical href=https://asubedi.com.np/dlog/2024/july/23/>
-<meta name=description content="Hello again! This is going to be a short one. Ever had the moment when you are working in multiple branches and you have to switch between them? I have. Recently, I’ve been using two shortcut quite a lot.
- Git provides us a handy shortcut for this situation.  git checkout -  This command checkouts to the previous working branch. This is quite helpful when you’re juggling between 2 branches.">
+<link rel=canonical href=https://asubedi.com.np/dlog/2024/august/7/>
+<meta name=description content="Hello everyone, welcome back! Today was a productive day for me as I got to work with pure SQL and fully implemented metering logic within a MySQL Stored Procedure. More about that coming soon!
+For now, let’s talk about the facade design pattern. In my workplace, we have a facade layer implementation, which serves as a central point of communication for the frontend layer (and some backend APIs). The job of this layer is to provide endpoints of internal APIs to the public through the facade, hence the name.">
 <link rel=apple-touch-icon sizes=180x180 href=https://asubedi.com.np/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://asubedi.com.np/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://asubedi.com.np/favicon-16x16.png>
@@ -18,7 +18,7 @@
 <style id=darkTheme>.intro-and-nav,.main-and-footer{filter:invert(100%)}*{background-color:inherit}img:not([src*=".svg"]),.colors,iframe,.demo-container{filter:invert(100%)}</style>
 <link rel=stylesheet href=/css/prism.css media=none onload="this.media='all'">
 <link rel=stylesheet type=text/css href=/css/styles.css>
-<title>July 23 | Ashish's Site</title>
+<title>August 7 | Ashish's Site</title>
 <script>!function(e,a){var d,b,c,f;a.__SV||(window.posthog=a,a._i=[],a.init=function(j,i,h){function k(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]),a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}(c=e.createElement("script")).type="text/javascript",c.async=!0,c.src=i.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(f=e.getElementsByTagName("script")[0]).parentNode.insertBefore(c,f);var g=a;for(void 0!==h?g=a[h]=[]:h="posthog",g.people=g.people||[],g.toString=function(b){var a="posthog";return"posthog"!==h&&(a+="."+h),b||(a+=" (stub)"),a},g.people.toString=function(){return g.toString(1)+".people (stub)"},d="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),b=0;b<d.length;b++)k(g,d[b]);a._i.push([j,i,h])},a.__SV=1)}(document,window.posthog||[]),posthog.init('phc_BOAEE4GfbeP82ajblLje3rRalycb27srENy5uInY3FB',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'})</script>
 </head>
 <body>
@@ -89,11 +89,11 @@ dark theme: <input type=checkbox id=themer class=vh>
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>July 23</h1>
+<h1>August 7</h1>
 <div class=date>
-<strong>Publish date: </strong>Jul 23, 2024
+<strong>Publish date: </strong>Aug 7, 2024
 <br>
-<strong>Last updated: </strong>Jul 23, 2024
+<strong>Last updated: </strong>Aug 7, 2024
 </div>
 <style>.current-page{font-weight:700;font-size:large}</style>
 <details class=toc style=margin-left:0 open>
@@ -104,21 +104,21 @@ dark theme: <input type=checkbox id=themer class=vh>
 <summary><a href=/dlog/2024/>2024</a></summary>
 <ul style=list-style-type:none;margin-top:0;margin-left:2ex>
 <li>
-<details>
+<details open>
 <summary><a href=/dlog/2024/august/>August</a></summary>
 <ul style=list-style-type:none;margin-top:0;margin-left:2ex>
 <li>
-<a href=/dlog/2024/august/7/>August 7</a>
+<a href=/dlog/2024/august/7/ class=current-page>August 7</a>
 </li>
 </ul>
 </details>
 </li>
 <li>
-<details open>
+<details>
 <summary><a href=/dlog/2024/july/>July</a></summary>
 <ul style=list-style-type:none;margin-top:0;margin-left:2ex>
 <li>
-<a href=/dlog/2024/july/23/ class=current-page>July 23</a>
+<a href=/dlog/2024/july/23/>July 23</a>
 </li>
 <li>
 <a href=/dlog/2024/july/12/>July 12</a>
@@ -151,27 +151,134 @@ dark theme: <input type=checkbox id=themer class=vh>
 </li>
 </ul>
 </details>
-<p>Hello again! This is going to be a short one.
-Ever had the moment when you are working in multiple branches and you have to switch between them? I have.
-Recently, I&rsquo;ve been using two shortcut quite a lot.</p>
-<ol>
-<li>Git provides us a handy shortcut for this situation.</li>
-</ol>
-<pre><code class=language-bash>git checkout -
+<p>Hello everyone, welcome back! Today was a productive day for me as I got to work with pure SQL and fully implemented metering logic within a MySQL Stored Procedure. More about that coming soon!</p>
+<p>For now, let&rsquo;s talk about the <a href=https://refactoring.guru/design-patterns/facade>facade design pattern</a>. In my workplace, we have a facade layer implementation, which serves as a central point of communication for the frontend layer (and some backend APIs). The job of this layer is to provide endpoints of internal APIs to the public through the facade, hence the name. This is implemented in FastAPI.</p>
+<p>Currently, in the facade layer, when someone needs to add a new layer, they create a FastAPI endpoint, add some function to perform pre-processing with data if necessary, call another service(s), then post-process the data if required, and serve it. Simple enough, right?</p>
+<p>This got me thinking: this could be done using a JSON config where you just define the endpoints you want to expose, the backend endpoint that the request will be routed through, and run pre/post-processing functions if required. I have created a POC of this design in FastAPI, so let&rsquo;s talk about it.</p>
+<blockquote>
+<p>Github: <a href=https://github.com/ashishsubedi/facade_experiments>https://github.com/ashishsubedi/facade_experiments</a></p>
+</blockquote>
+<h2 id=file-structure>File Structure</h2>
+<pre><code>├── helpers
+├── main.py
+├── Readme.md
+├── routes.json
+├── services
+│   ├── function_registry.py
+│   ├── __init__.py
+│   ├── postprocess
+│   │   ├── products.py
+│   ├── preprocess
 </code></pre>
-<p>This command checkouts to the previous working branch. This is quite helpful when you&rsquo;re juggling between 2 branches.</p>
-<p>But for me, major problem arises when I have to juggle between multiple branches when few people are working on the same project, or when I have to work on multiple branches. This happens to me quite a lot for some reason.</p>
-<ol start=2>
-<li>Git provides us ability to sort branch based on multiple parameters. I make use out of this to sort branches in descending order by commit date.</li>
-</ol>
-<pre><code class=language-bash>git branch --sort=-committerdate
+<p>The above is the directory structure of the codebase.</p>
+<h2 id=components>Components</h2>
+<h3 id=routesjson>routes.json</h3>
+<p>This is the JSON file that contains the route information.</p>
+<pre><code class=language-json>{
+    &quot;/api/products&quot;: {
+        &quot;method&quot;: &quot;GET&quot;,
+        &quot;backend_url&quot;: &quot;https://fakestoreapi.com/products/&quot;,
+        &quot;pre_process&quot;: &quot;preprocess_products&quot;,
+        &quot;post_process&quot;: &quot;postprocess_products&quot;
+    },
+    
+    &quot;/api/products/{id}&quot;: {
+        &quot;method&quot;: &quot;GET&quot;,
+        &quot;backend_url&quot;: &quot;https://fakestoreapi.com/products/{id}&quot;
+    }   
+}
 </code></pre>
-<p>This is good start. This shows me the branch I commited recently at the top. But it&rsquo;s still a hassle to copy the branch name and checkout to it.</p>
-<p>That&rsquo;s where one of my favorite tools comes in. Behold the magic of <strong><a href=https://github.com/junegunn/fzf>fzf</a></strong>. In one line, it&rsquo;s an interactive fuzzy finder for anything in terminal, and it&rsquo;s really fast.</p>
-<p>Using fzf, I&rsquo;ve created an alias which lists all the branches sorted by commit date in interative terminal, where I can either type the name, or use arrow keys to select the required branch to checkout.</p>
-<pre><code class=language-bash>alias gbs=&quot;git branch --sort=-committerdate | fzf | xargs git checkout&quot;
+<p>In the JSON structure above, each key represents a route we want to expose through the facade. The <code>backend_url</code> field specifies where the request will be redirected. The optional fields <code>pre_process</code> and <code>post_process</code> define functions that will be invoked to pre-process the request and post-process the data, respectively. Though the config can handle path parameters, this feature is not yet implemented in the POC.</p>
+<h3 id=function_registrypy>function_registry.py</h3>
+<pre><code class=language-python>function_registry = {}
+
+def register_function(func):
+    function_registry[func.__name__] = func
+    return func
+
 </code></pre>
-<p>That&rsquo;s it guys. Hope you have fun with the new power you&rsquo;ve attained. Adios!</p>
+<p>This script includes two components: a global function store called <code>function_registry</code> and a <code>register_function</code> decorator. The decorator adds a function&rsquo;s name to the function registry, enabling us to specify which functions to call in the routes.json file.</p>
+<h3 id=postprocessproductspy>postprocess/products.py</h3>
+<pre><code class=language-python>from services.function_registry import register_function
+
+@register_function
+async def postprocess_products(data: dict):
+    print(&quot;Post-processing procucts response&quot;)
+    # Implement post-processing logic for users
+    new_data = []
+    for d in data:
+        new_data.append({
+            k:v for k, v in d.items() if k in (&quot;id&quot;, &quot;title&quot;, &quot;price&quot;)
+        })
+    return n
+</code></pre>
+<p>We implement the decorator on a postprocessor to register it in <code>function_registory</code>.</p>
+<h3 id=mainpy>main.py</h3>
+<pre><code class=language-python>
+app = FastAPI()
+
+# Load route configurations from a JSON file
+
+with open(&quot;routes.json&quot;) as f:
+    route_configs = json.load(f)
+
+async def facade_handler(
+    request: Request,
+    config: Dict[str, Any],
+    pre_process: Callable = None,
+    post_process: Callable = None
+):
+    # Pre-processing
+    if pre_process:
+        await pre_process(request)
+    
+    # Make request to backend API
+    async with httpx.AsyncClient() as client:
+        response = await client.request(
+            method=request.method,
+            url=config[&quot;backend_url&quot;],
+            # headers=request.headers,
+            params=request.query_params,
+        )
+
+    response_data = response.json()
+    
+    # Post-processing
+    if post_process:
+        response_data = await post_process(response_data)
+    
+    return JSONResponse(content=response_data, status_code=response.status_code)
+
+def create_route_handler(config, pre_process, post_process):
+    async def route_handler(request: Request):
+        return await facade_handler(request, config, pre_process, post_process)
+    return route_handler
+
+# Dynamic route generation based on config
+for route, config in route_configs.items():
+    method = config.get(&quot;method&quot;, &quot;GET&quot;)
+    pre_process = function_registry.get(config.get(&quot;pre_process&quot;))
+    post_process = function_registry.get(config.get(&quot;post_process&quot;))
+
+
+    app.add_api_route(
+        route, 
+        create_route_handler(config, pre_process, post_process),
+        methods=[method]
+    )
+
+</code></pre>
+<p>The above piece of code connects all the dots. It has three parts:</p>
+<ul>
+<li><strong>Loading Route Configs</strong>: First, we load the route configs from the <code>routes.json</code> file.</li>
+<li><strong>Facade Handler</strong>: We have a function, appropriately named <code>facade_handler</code>, which handles the incoming request as required.</li>
+<li><strong>Dynamic Route Generation</strong>: Here, we get the necessary configs and use FastAPI&rsquo;s <code>add_api_route</code> method to dynamically add the route.</li>
+</ul>
+<blockquote>
+<p>Github: <a href=https://github.com/ashishsubedi/facade_experiments>https://github.com/ashishsubedi/facade_experiments</a></p>
+</blockquote>
+<p>This structure allows us to seamlessly integrate the facade design pattern with FastAPI by defining the routes and processing logic in a JSON configuration file. You can go to the /docs endpoint to see the generated endpoints and test them out.</p>
+<p>I hope this was informative to you as it was to me. See you soon, peace out!</p>
 </main>
 </div>
 </div>
