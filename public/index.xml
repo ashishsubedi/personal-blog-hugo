@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Ashish&#39;s Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Ashish&#39;s Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
+    <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
+    <lastBuildDate>Wed, 07 Aug 2024 22:59:27 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>August 7</title>
+      <link>http://localhost:1313/dlog/2024/august/7/</link>
+      <pubDate>Wed, 07 Aug 2024 22:18:44 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/august/7/</guid>
+      <description>&lt;p&gt;Hello everyone, welcome back! Today was a productive day for me as I got to work with pure SQL and fully implemented metering logic within a MySQL Stored Procedure. More about that coming soon!&lt;/p&gt;&#xA;&lt;p&gt;For now, let&amp;rsquo;s talk about the  &lt;a href=&#34;https://refactoring.guru/design-patterns/facade&#34;&gt;facade design pattern&lt;/a&gt;. In my workplace, we have a facade layer implementation, which serves as a central point of communication for the frontend layer (and some backend APIs). The job of this layer is to provide endpoints of internal APIs to the public through the facade, hence the name. This is implemented in FastAPI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>July 23</title>
+      <link>http://localhost:1313/dlog/2024/july/23/</link>
+      <pubDate>Tue, 23 Jul 2024 20:20:51 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/july/23/</guid>
+      <description>&lt;p&gt;Hello again! This is going to be a short one.&#xA;Ever had the moment when you are working in multiple branches and you have to switch between them? I have.&#xA;Recently, I&amp;rsquo;ve been using two shortcut quite a lot.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Git provides us a handy shortcut for this situation.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;This command checkouts to the previous working branch. This is quite helpful when you&amp;rsquo;re juggling between 2 branches.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>July 12</title>
+      <link>http://localhost:1313/dlog/2024/july/12/</link>
+      <pubDate>Fri, 12 Jul 2024 20:33:43 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/july/12/</guid>
+      <description>&lt;p&gt;Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>June 26</title>
+      <link>http://localhost:1313/dlog/2024/june/26/</link>
+      <pubDate>Wed, 26 Jun 2024 01:18:12 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/june/26/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s already around 1:30 AM. It took a long time for me to figure out the table of contents for dev log.&lt;/p&gt;&#xA;&lt;p&gt;This feels like meta dev log lol. Anyway, I guess the result turned out to be okayish. Goodnight.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>June 25</title>
+      <link>http://localhost:1313/dlog/2024/june/25/</link>
+      <pubDate>Tue, 25 Jun 2024 22:24:06 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/june/25/</guid>
+      <description>&lt;p&gt;Beginning of my dev log, inspired from &lt;a href=&#34;https://utsavdarlami.github.io/dlog/&#34;&gt;https://utsavdarlami.github.io/dlog/&lt;/a&gt; .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cheatsheets</title>
+      <link>http://localhost:1313/blog/cheatsheets/</link>
+      <pubDate>Sun, 05 Feb 2023 00:28:16 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/cheatsheets/</guid>
+      <description>&lt;p&gt;=============  Website Update alert!!! ===============&lt;/p&gt;&#xA;&lt;p&gt;Hello there, hope you&amp;rsquo;re having a wonderful day.&lt;/p&gt;&#xA;&lt;p&gt;New section &lt;a href=&#34;http://localhost:1313/cheatsheets/&#34;&gt;&lt;strong&gt;Cheatsheets&lt;/strong&gt;&lt;/a&gt; is added in the website.&lt;/p&gt;&#xA;&lt;p&gt;As of today, it contains the sections:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/gcloud/&#34;&gt;Gcloud&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/docker/&#34;&gt;Docker&lt;/a&gt;, and&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This sheets will contains things that I use regularly, but can&amp;rsquo;t bother to remember them.&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s it folk, see ya!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/cheatsheets/gcloud/basics/</link>
+      <pubDate>Sun, 05 Feb 2023 00:19:07 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/gcloud/basics/</guid>
+      <description>&lt;h4 id=&#34;list-all-authenticated-credentials-principals&#34;&gt;List all authenticated credentials (principals)&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gcloud auth list&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;make-another-account-active&#34;&gt;Make another account active&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gcloud config set account `ACCOUNT`&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;activate-service-account-if-new-and-no-principals&#34;&gt;Activate Service account (if new and no principals)&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gcloud auth activate-service-account --key-file=/path/to/key.json&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/cheatsheets/docker/basics/</link>
+      <pubDate>Sun, 05 Feb 2023 00:11:31 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/docker/basics/</guid>
+      <description>&lt;h4 id=&#34;see-all-running-pods&#34;&gt;See all running pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker ps&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;see-all-ran-pods&#34;&gt;See all ran pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker ps -a&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-none-dangling-images&#34;&gt;Remove &amp;lt;none&amp;gt; (dangling) images&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rmi $(docker images -f &amp;quot;dangling=true&amp;quot; -q)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-all-containers&#34;&gt;Remove all containers&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rm $(docker ps -aq)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-images-conatining-keyword&#34;&gt;Remove images conatining keyword&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rmi -f $(docker images | grep &#39;keyword&#39; | awk &#39;{print $1}&#39;)&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/cheatsheets/kubernetes/basics/</link>
+      <pubDate>Sat, 04 Feb 2023 23:32:43 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/kubernetes/basics/</guid>
+      <description>&lt;h4 id=&#34;alias-kubectl-to-kc-for-easy-typing&#34;&gt;Alias kubectl to kc for easy typing&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;alias kc=&amp;quot;kubectl&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;list-all-the-available-namespaces&#34;&gt;List all the available namespaces&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc get namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-pods-running-in-namespace&#34;&gt;Get all pods running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc get pods -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-pods-running-in-namespace-1&#34;&gt;Get all pods running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc logs &amp;lt;pod&amp;gt; -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-resource-running-in-namespace&#34;&gt;Get all resource running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc logs resource/&amp;lt;resource_name&amp;gt; -n namespace&#xA;Eg: kc logs services/xyz -n namespace&#xA;&lt;/code&gt;&lt;/pr</description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>http://localhost:1313/cheatsheets/kubernetes/debugging/</link>
+      <pubDate>Sat, 04 Feb 2023 20:59:39 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/kubernetes/debugging/</guid>
+      <description>&lt;h4 id=&#34;view-resource-usage-top-of-different-pods&#34;&gt;View resource usage (top) of different pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc top pods -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-a-shell-to-the-running-container&#34;&gt;Get a shell to the running container&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc exec --stdin --tty &amp;lt;pod-name&amp;gt; -n namespace -- /bin/bash&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: The double dash &lt;code&gt;(--)&lt;/code&gt; separates the arguments you want to pass to the command from the kubectl arguments.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h4 id=&#34;list-all-environment-variables-in-the-running-container&#34;&gt;List all environment variables in the running container&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc exec &amp;lt;pod-name&amp;gt; env -n namespace&#xA;&lt;/code&gt;&lt;/pr</description>
+    </item>
+    <item>
+      <title>Making My Life Easier with Bash/Zsh Function</title>
+      <link>http://localhost:1313/blog/make-pyenv-life-easier/</link>
+      <pubDate>Sat, 14 Jan 2023 09:02:39 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/make-pyenv-life-easier/</guid>
+      <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;&#xA;&lt;p&gt;Hello everyone, it&amp;rsquo;s been such a long time since my last blog. Life&amp;rsquo;s been busy and have not been able to update the blog as I thought I would. Anyway, new post incoming.&lt;/p&gt;&#xA;&lt;p&gt;Unlike every other people on the planet, I use &lt;code&gt;pyenv virtualenv&lt;/code&gt; to create virtualenv. Reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;For me is to easily switch between python version depending on the repo, as my workplace maintains repos with 2 python versions.&lt;/li&gt;&#xA;&lt;li&gt;Also, I like how venv is separate from the main codebase.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;One drawback is that you have to remember the name of the venv that you need for the repo. To overcome this drawback, I started naming my venv with the name of the directory I&amp;rsquo;m currently working on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I come up with my instagram captions using Python and Scrapy</title>
+      <link>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</link>
+      <pubDate>Sat, 22 Jan 2022 22:21:00 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Note: This is an article I wrote a while back. Enjoy&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code. You can make your computer do the hard work for you ;)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upcoming Blogs Idea</title>
+      <link>http://localhost:1313/blog/my-second-blog/</link>
+      <pubDate>Wed, 12 Jan 2022 23:55:25 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/my-second-blog/</guid>
+      <description>&lt;p&gt;Lately, I&amp;rsquo;ve been learning stuffs about Devops, and mainly focusing on Kubernetes. In few of the upcoming posts, I&amp;rsquo;d like to share some stuffs about my learning process, few blockers I&amp;rsquo;ve faced, and so on. I&amp;rsquo;m also planning to create one post related to how this website is created. Peace out  🤞&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 12 Jan 2022 17:43:09 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Welcome! I’m Ashish, a software engineer with around 4 years of experience specializing in backend and system design. My expertise extends to ML, AI, and LLMs, encompassing everything from traditional machine learning algorithms to complex deep neural networks.&lt;/p&gt;&#xA;&lt;p&gt;If you’ve stumbled here by chance or curiosity, welcome! This is my personal corner of the internet where I share a mix of thoughts and ideas—some practical, others just for fun. It’s a place for me to reflect on my experiences and interests, and I hope you find something that piques your interest as you browse around!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Welcome Post</title>
+      <link>http://localhost:1313/blog/welcome-post/</link>
+      <pubDate>Wed, 12 Jan 2022 17:43:09 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/welcome-post/</guid>
+      <description>&lt;p&gt;This is my first post. I&amp;rsquo;m trying to create my blog using hugo, let&amp;rsquo;s see how this works. I&amp;rsquo;ll try to keep this site updated. Hopefully.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
