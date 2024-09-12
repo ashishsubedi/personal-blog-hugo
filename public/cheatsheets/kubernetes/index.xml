@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Ashish&#39;s Site</title>
+    <link>http://localhost:1313/cheatsheets/kubernetes/</link>
+    <description>Recent content in Kubernetes on Ashish&#39;s Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
+    <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
+    <lastBuildDate>Sun, 05 Feb 2023 00:40:02 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/cheatsheets/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/cheatsheets/kubernetes/basics/</link>
+      <pubDate>Sat, 04 Feb 2023 23:32:43 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/kubernetes/basics/</guid>
+      <description>&lt;h4 id=&#34;alias-kubectl-to-kc-for-easy-typing&#34;&gt;Alias kubectl to kc for easy typing&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;alias kc=&amp;quot;kubectl&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;list-all-the-available-namespaces&#34;&gt;List all the available namespaces&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc get namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-pods-running-in-namespace&#34;&gt;Get all pods running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc get pods -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-pods-running-in-namespace-1&#34;&gt;Get all pods running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc logs &amp;lt;pod&amp;gt; -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-all-resource-running-in-namespace&#34;&gt;Get all resource running in namespace&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc logs resource/&amp;lt;resource_name&amp;gt; -n namespace&#xA;Eg: kc logs services/xyz -n namespace&#xA;&lt;/code&gt;&lt;/pr</description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>http://localhost:1313/cheatsheets/kubernetes/debugging/</link>
+      <pubDate>Sat, 04 Feb 2023 20:59:39 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/cheatsheets/kubernetes/debugging/</guid>
+      <description>&lt;h4 id=&#34;view-resource-usage-top-of-different-pods&#34;&gt;View resource usage (top) of different pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc top pods -n namespace&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;get-a-shell-to-the-running-container&#34;&gt;Get a shell to the running container&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc exec --stdin --tty &amp;lt;pod-name&amp;gt; -n namespace -- /bin/bash&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: The double dash &lt;code&gt;(--)&lt;/code&gt; separates the arguments you want to pass to the command from the kubectl arguments.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h4 id=&#34;list-all-environment-variables-in-the-running-container&#34;&gt;List all environment variables in the running container&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kc exec &amp;lt;pod-name&amp;gt; env -n namespace&#xA;&lt;/code&gt;&lt;/pr</description>
+    </item>
+  </channel>
+</rss>

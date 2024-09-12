@@ -8,10 +8,6 @@ enableGitInfo: true
 
 generator: "Custom"
 
-author:
-  name: Ashish Subedi
-  email: iamashishsubedi@gmail.com
-
 taxonomies:
   tag: tags
 
@@ -36,6 +32,10 @@ params:
   moveFooterToHeader: true
   navTitleText: Ashish's Site
   logoAlt: Ashish's Site
+
+  author:
+    name: Ashish Subedi
+    email: iamashishsubedi@gmail.com
 
 menu:
   nav:
