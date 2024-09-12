@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.134.1">
-  <link rel="canonical" href="http://localhost:1313/dlog/2024/july/12/" />
+  <link rel="canonical" href="http://localhost:1313/dlog/2024/september/" />
 
   
     
-    <meta name="description" content="Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.">
+    <meta name="description" content="September">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
@@ -56,7 +56,7 @@
 
   
   
-  <title>July 12 | Ashish&#39;s Site</title>
+  <title>September | Ashish&#39;s Site</title>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_BOAEE4GfbeP82ajblLje3rRalycb27srENy5uInY3FB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only' 
@@ -302,21 +302,18 @@
       <div class="main-and-footer">
         <div>
           
-  <main id="main">
+<main id="main">
+  <h1>September</h1>
+  
+  <input
+    id="search"
+    type="text"
+    placeholder="Search by title..."
+    aria-label="Search by title"
+  />
+  
 
-    <h1>July 12</h1>    
-    <div class="date">
-      
-      
-      <strong>Publish date: </strong>Jul 12, 2024
-      
-      
-          <br>
-          <strong>Last updated: </strong>Jul 23, 2024
-          
-          
-        </div>
-        
+ 
   
   <style>
       .current-page {
@@ -349,8 +346,8 @@
 
           
             
-                <details >
-                    <summary><a href="/dlog/2024/september/" >September</a></summary>
+                <details open>
+                    <summary><a href="/dlog/2024/september/" class="current-page">September</a></summary>
                     
                     
 <ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
@@ -409,7 +406,7 @@
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2024/july/" >July</a></summary>
                     
                     
@@ -432,7 +429,7 @@
 
           
             
-                <a href="/dlog/2024/july/12/" class="current-page">July 12</a>
+                <a href="/dlog/2024/july/12/" >July 12</a>
             
 
         </li>
@@ -518,40 +515,30 @@
  
 
 
-        <p>Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.</p>
-<pre><code class="language-python">example = {
-  &quot;key1&quot;: {
-    &quot;key2&quot;: {
-      &quot;key3&quot;: [
-        {
-          &quot;key4&quot;: {
-            &quot;required&quot;: &quot;value&quot;
-          }
-        }
-      ]
-    }
-  }
-}
+ 
 
-</code></pre>
-<p>Let&rsquo;s say we have multiple variants of the json with similar structure where you need to get the <code>required</code> value. One way to do it would be to directly get the data from the dict.</p>
-<pre><code class="language-python">example[&quot;key1&quot;][&quot;key2&quot;][&quot;key3&quot;][0][&quot;key4&quot;][&quot;required&quot;]
-</code></pre>
-<p>While this is totally fine, doing this for many variation is tedious.</p>
-<p>The following function I think is very good approach to make it easier.</p>
-<pre><code class="language-python">from functools import reduce
-def get_value_from_dict(data: dict, path: Iterable[str | int]) -&gt; Any:
-    return reduce(lambda curr, key: curr[key], path, data)
+  <ul class="patterns-list" id="list">
+    
+    <li>
+      <h2>
+        <a href="/dlog/2024/september/12/">
+          <svg
+            class="bookmark"
+            aria-hidden="true"
+            viewBox="0 0 40 50"
+            focusable="false"
+          >
+            <use xlink:href="#bookmark"></use>
+          </svg>
+          September 12
+        </a>
+      </h2>
 
-</code></pre>
-<p>And then function is called as below</p>
-<pre><code class="language-python">
-get_value_from_dict(example, (&quot;key1&quot;, &quot;key2&quot;, &quot;key3&quot;, 0, &quot;key4&quot;, &quot;required&quot;))
-
-</code></pre>
-<p>which I believe looks much cleaner and less tedious compared to previous approach.</p>
-
-  </main>
+      <div class="date">Sep 12, 2024</div>
+    </li>
+    
+  </ul>
+</main>
 
           
         </div>

@@ -6,11 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.134.1">
-  <link rel="canonical" href="http://localhost:1313/dlog/2024/july/12/" />
+  <link rel="canonical" href="http://localhost:1313/dlog/2024/september/12/" />
 
   
     
-    <meta name="description" content="Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.">
+    <meta name="description" content="Setup VSCode in Dev Containers 🚢 Hey everyone, I hope it’s going good. This is something I’ve faced quite a lot. I’ve encountered a recurring challenge at my workplace: setting up backend repositories every time I change my device (three times already, lol). The process has become even more tedious with the new Apple Silicon chips.
+So, I’ve decided to switch my development environment entirely to Docker containers. While exploring, I discovered Dev Containers in VSCode (my preferred editor).">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
@@ -56,7 +57,7 @@
 
   
   
-  <title>July 12 | Ashish&#39;s Site</title>
+  <title>September 12 | Ashish&#39;s Site</title>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_BOAEE4GfbeP82ajblLje3rRalycb27srENy5uInY3FB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only' 
@@ -304,16 +305,13 @@
           
   <main id="main">
 
-    <h1>July 12</h1>    
+    <h1>September 12</h1>    
     <div class="date">
       
       
-      <strong>Publish date: </strong>Jul 12, 2024
+      <strong>Publish date: </strong>Sep 12, 2024
       
       
-          <br>
-          <strong>Last updated: </strong>Jul 23, 2024
-          
           
         </div>
         
@@ -349,7 +347,7 @@
 
           
             
-                <details >
+                <details open>
                     <summary><a href="/dlog/2024/september/" >September</a></summary>
                     
                     
@@ -361,7 +359,7 @@
 
           
             
-                <a href="/dlog/2024/september/12/" >September 12</a>
+                <a href="/dlog/2024/september/12/" class="current-page">September 12</a>
             
 
         </li>
@@ -409,7 +407,7 @@
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2024/july/" >July</a></summary>
                     
                     
@@ -432,7 +430,7 @@
 
           
             
-                <a href="/dlog/2024/july/12/" class="current-page">July 12</a>
+                <a href="/dlog/2024/july/12/" >July 12</a>
             
 
         </li>
@@ -518,38 +516,114 @@
  
 
 
-        <p>Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.</p>
-<pre><code class="language-python">example = {
-  &quot;key1&quot;: {
-    &quot;key2&quot;: {
-      &quot;key3&quot;: [
-        {
-          &quot;key4&quot;: {
-            &quot;required&quot;: &quot;value&quot;
-          }
+        <h1 id="setup-vscode-in-dev-containers-">Setup VSCode in Dev Containers 🚢</h1>
+<p>Hey everyone, I hope it&rsquo;s going good. This is something I&rsquo;ve faced quite a lot. I&rsquo;ve encountered a recurring challenge at my workplace: setting up backend repositories every time I change my device (three times already, lol). The process has become even more tedious with the new Apple Silicon chips.</p>
+<p>So, I&rsquo;ve decided to switch my development environment entirely to Docker containers. While exploring, I discovered Dev Containers in VSCode (my preferred editor).</p>
+<p>This blog serves more as a backup for my setup rather than a typical blog post, lol.</p>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>Docker</li>
+<li>VScode</li>
+<li>Docker and Remote Explorer extension for VSCode</li>
+<li>Environment Variables for build args (if required)</li>
+</ul>
+<h1 id="steps">Steps</h1>
+<h2 id="setup-devcontainerjson">Setup <code>devcontainer.json</code></h2>
+<blockquote>
+<p>Skip this if <code>.devcontainer/devcontainer.json</code>  exist in the repo</p>
+</blockquote>
+<ul>
+<li>Create a folder named <code>.devcontainer</code> in the project root</li>
+<li>Create a file named <code>.devcontainer/devcontainer.json</code>.</li>
+</ul>
+<pre><code class="language-json">    // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+    {
+        &quot;name&quot;: &quot;Existing Dockerfile&quot;,
+        &quot;build&quot;: {
+            &quot;options&quot;: [&quot;--network&quot;, &quot;host&quot;],
+            // Sets the run context to one level up instead of the .devcontainer folder.
+            &quot;context&quot;: &quot;../path/to/context&quot;,
+            // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+            &quot;dockerfile&quot;: &quot;../path/to/context/Dockerfile&quot;,
+            &quot;args&quot;: {
+                &quot;XYZ&quot;: &quot;${localEnv:XYZ}&quot;,
+            }
+            
+        },
+        &quot;mounts&quot;: [
+            &quot;source=profile,target=/root,type=volume&quot;,
+            &quot;target=/root/.vscode-server,type=volume&quot;
+        ],
+        &quot;customizations&quot;: {
+            &quot;vscode&quot;: {
+                &quot;extensions&quot;: [
+                    &quot;alexcvzz.vscode-sqlite&quot;,
+                    &quot;dracula-theme.theme-dracula&quot;,
+                    &quot;eamodio.gitlens&quot;,
+                    &quot;github.codespaces&quot;,
+                    &quot;github.copilot&quot;,
+                    &quot;github.copilot-chat&quot;,
+                    &quot;github.vscode-github-actions&quot;,
+                    &quot;github.vscode-pull-request-github&quot;,
+                    &quot;mhutchie.git-graph&quot;,
+                    &quot;mikoz.black-py&quot;,
+                    &quot;ms-azuretools.vscode-docker&quot;,
+                    &quot;ms-python.black-formatter&quot;,
+                    &quot;ms-python.debugpy&quot;,
+                    &quot;ms-python.python&quot;,
+                    &quot;ms-python.vscode-pylance&quot;,
+                    &quot;ms-toolsai.jupyter&quot;,
+                    &quot;ms-toolsai.jupyter-keymap&quot;,
+                    &quot;ms-toolsai.jupyter-renderers&quot;,
+                    &quot;ms-toolsai.vscode-jupyter-cell-tags&quot;,
+                    &quot;ms-toolsai.vscode-jupyter-slideshow&quot;,
+                    &quot;ms-vscode-remote.remote-containers&quot;,
+                    &quot;ms-vscode-remote.remote-ssh&quot;,
+                    &quot;ms-vscode-remote.remote-ssh-edit&quot;,
+                    &quot;ms-vscode.remote-explorer&quot;,
+                    &quot;ms-vscode.remote-server&quot;,
+                    &quot;mtxr.sqltools&quot;,
+                    &quot;qwtel.sqlite-viewer&quot;,
+                    &quot;vscodevim.vim&quot;,
+                    &quot;waderyan.gitblame&quot;
+                ],
+                &quot;settings&quot;: {
+                    &quot;terminal.integrated.defaultProfile.linux&quot;: &quot;bash&quot;
+                }
+            }
+        },
+        &quot;features&quot;: {
+            &quot;ghcr.io/devcontainers-contrib/features/pre-commit:2&quot;: {}
         }
-      ]
+
     }
-  }
-}
-
 </code></pre>
-<p>Let&rsquo;s say we have multiple variants of the json with similar structure where you need to get the <code>required</code> value. One way to do it would be to directly get the data from the dict.</p>
-<pre><code class="language-python">example[&quot;key1&quot;][&quot;key2&quot;][&quot;key3&quot;][0][&quot;key4&quot;][&quot;required&quot;]
-</code></pre>
-<p>While this is totally fine, doing this for many variation is tedious.</p>
-<p>The following function I think is very good approach to make it easier.</p>
-<pre><code class="language-python">from functools import reduce
-def get_value_from_dict(data: dict, path: Iterable[str | int]) -&gt; Any:
-    return reduce(lambda curr, key: curr[key], path, data)
-
-</code></pre>
-<p>And then function is called as below</p>
-<pre><code class="language-python">
-get_value_from_dict(example, (&quot;key1&quot;, &quot;key2&quot;, &quot;key3&quot;, 0, &quot;key4&quot;, &quot;required&quot;))
-
-</code></pre>
-<p>which I believe looks much cleaner and less tedious compared to previous approach.</p>
+<p>This is my preferred config.</p>
+<h2 id="working-in-the-container">Working in the Container</h2>
+<ol>
+<li>Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on mac) to open the command palette.</li>
+<li>Select <code>Dev Containers: Reopen in Container</code> (recommended).</li>
+<li>It will take some time to build the Docker image for the first time.
+<ul>
+<li>Ensure the shell where VS Code is started has the necessary environment variables; otherwise, the build will fail.</li>
+<li>Once built, you can start development within the container.</li>
+<li>From the second time onward, it will automatically start the container even if it&rsquo;s stopped.</li>
+<li>Use the VSCode terminal to perform tasks within Docker (e.g., running the server).</li>
+</ul>
+</li>
+<li>(Not recommended) You can manually run and attach to the running container with <code>Dev Containers: Attach to Running Container</code>.</li>
+</ol>
+<blockquote>
+<p>Note: Don&rsquo;t forget to close unwanted running Docker containers.</p>
+</blockquote>
+<h1 id="caveats">Caveats</h1>
+<ul>
+<li>Bash is set as the default terminal.</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<p>For more details, visit: <a href="https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container">https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container</a></p>
+<h1 id="endnote">Endnote</h1>
+<p>I&rsquo;m still figuring out how to use my zsh configuration inside Docker, but that&rsquo;s for later. I hope this helps you in some way. Enjoy, and until next time!</p>
 
   </main>
 

@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
-    <lastBuildDate>Wed, 07 Aug 2024 22:59:27 +0545</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2024 21:00:43 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>September 12</title>
+      <link>http://localhost:1313/dlog/2024/september/12/</link>
+      <pubDate>Thu, 12 Sep 2024 21:00:43 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/dlog/2024/september/12/</guid>
+      <description>&lt;h1 id=&#34;setup-vscode-in-dev-containers-&#34;&gt;Setup VSCode in Dev Containers 🚢&lt;/h1&gt;&#xA;&lt;p&gt;Hey everyone, I hope it&amp;rsquo;s going good. This is something I&amp;rsquo;ve faced quite a lot. I&amp;rsquo;ve encountered a recurring challenge at my workplace: setting up backend repositories every time I change my device (three times already, lol). The process has become even more tedious with the new Apple Silicon chips.&lt;/p&gt;&#xA;&lt;p&gt;So, I&amp;rsquo;ve decided to switch my development environment entirely to Docker containers. While exploring, I discovered Dev Containers in VSCode (my preferred editor).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>August 7</title>
       <link>http://localhost:1313/dlog/2024/august/7/</link>
