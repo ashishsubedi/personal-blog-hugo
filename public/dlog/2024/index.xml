@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2024 on Ashish&#39;s Site</title>
-    <link>http://localhost:1313/dlog/2024/</link>
+    <link>https://asubedi.com.np/dlog/2024/</link>
     <description>Recent content in 2024 on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/dlog/2024/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://asubedi.com.np/dlog/2024/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

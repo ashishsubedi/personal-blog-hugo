@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.142.0">
-  <link rel="canonical" href="https://asubedi.com.np/dlog/2024/july/23/" />
+  <link rel="canonical" href="https://asubedi.com.np/dlog/2025/february/" />
 
   
     
-    <meta name="description" content="Hello again! This is going to be a short one. Ever had the moment when you are working in multiple branches and you have to switch between them? I have. Recently, I’ve been using two shortcut quite a lot.
-Git provides us a handy shortcut for this situation. git checkout - This command checkouts to the previous working branch. This is quite helpful when you’re juggling between 2 branches.">
+    <meta name="description" content="February">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://asubedi.com.np/apple-touch-icon.png">
@@ -57,7 +56,7 @@ Git provides us a handy shortcut for this situation. git checkout - This command
 
   
   
-  <title>July 23: Easy git checkout | Ashish&#39;s Site</title>
+  <title>February | Ashish&#39;s Site</title>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_BOAEE4GfbeP82ajblLje3rRalycb27srENy5uInY3FB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only' 
@@ -303,21 +302,18 @@ Git provides us a handy shortcut for this situation. git checkout - This command
       <div class="main-and-footer">
         <div>
           
-  <main id="main">
+<main id="main">
+  <h1>February</h1>
+  
+  <input
+    id="search"
+    type="text"
+    placeholder="Search by title..."
+    aria-label="Search by title"
+  />
+  
 
-    <h1>July 23: Easy git checkout</h1>    
-    <div class="date">
-      
-      
-      <strong>Publish date: </strong>Jul 23, 2024
-      
-      
-          <br>
-          <strong>Last updated: </strong>Oct 9, 2024
-          
-          
-        </div>
-        
+ 
   
   <style>
       .current-page {
@@ -338,8 +334,8 @@ Git provides us a handy shortcut for this situation. git checkout - This command
 
           
             
-                <details >
-                    <summary><a href="/dlog/2025/february/" >February</a></summary>
+                <details open>
+                    <summary><a href="/dlog/2025/february/" class="current-page">February</a></summary>
                     
                     
 <ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
@@ -368,7 +364,7 @@ Git provides us a handy shortcut for this situation. git checkout - This command
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2024/" >2024</a></summary>
                     
                     
@@ -440,7 +436,7 @@ Git provides us a handy shortcut for this situation. git checkout - This command
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2024/july/" >July</a></summary>
                     
                     
@@ -452,7 +448,7 @@ Git provides us a handy shortcut for this situation. git checkout - This command
 
           
             
-                <a href="/dlog/2024/july/23/" class="current-page">July 23: Easy git checkout</a>
+                <a href="/dlog/2024/july/23/" >July 23: Easy git checkout</a>
             
 
         </li>
@@ -549,29 +545,30 @@ Git provides us a handy shortcut for this situation. git checkout - This command
  
 
 
-        <p>Hello again! This is going to be a short one.
-Ever had the moment when you are working in multiple branches and you have to switch between them? I have.
-Recently, I&rsquo;ve been using two shortcut quite a lot.</p>
-<ol>
-<li>Git provides us a handy shortcut for this situation.</li>
-</ol>
-<pre><code class="language-bash">git checkout -
-</code></pre>
-<p>This command checkouts to the previous working branch. This is quite helpful when you&rsquo;re juggling between 2 branches.</p>
-<p>But for me, major problem arises when I have to juggle between multiple branches when few people are working on the same project, or when I have to work on multiple branches. This happens to me quite a lot for some reason.</p>
-<ol start="2">
-<li>Git provides us ability to sort branch based on multiple parameters. I  make use out of this to sort branches in descending order by commit date.</li>
-</ol>
-<pre><code class="language-bash">git branch --sort=-committerdate
-</code></pre>
-<p>This is good start. This shows me the branch I commited recently at the top. But it&rsquo;s still a hassle to copy the branch name and checkout to it.</p>
-<p>That&rsquo;s where one of my favorite tools comes in. Behold the magic of <strong><a href="https://github.com/junegunn/fzf">fzf</a></strong>. In one line, it&rsquo;s an interactive fuzzy finder for anything in terminal, and it&rsquo;s really fast.</p>
-<p>Using fzf, I&rsquo;ve created an alias which lists all the branches sorted by commit date in interative terminal, where I can either type the name, or use arrow keys to select the required branch to checkout.</p>
-<pre><code class="language-bash">alias gbs=&quot;git branch --sort=-committerdate | fzf | xargs git checkout&quot;
-</code></pre>
-<p>That&rsquo;s it guys. Hope you have fun with the new power you&rsquo;ve attained. Adios!</p>
+ 
 
-  </main>
+  <ul class="patterns-list" id="list">
+    
+    <li>
+      <h2>
+        <a href="/dlog/2025/february/1/">
+          <svg
+            class="bookmark"
+            aria-hidden="true"
+            viewBox="0 0 40 50"
+            focusable="false"
+          >
+            <use xlink:href="#bookmark"></use>
+          </svg>
+          February 1: UV Package Manager and AI Agent 
+        </a>
+      </h2>
+
+      <div class="date">Feb 1, 2025</div>
+    </li>
+    
+  </ul>
+</main>
 
           
         </div>

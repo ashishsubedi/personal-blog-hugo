@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scrapy on Ashish&#39;s Site</title>
-    <link>http://localhost:1313/tags/scrapy/</link>
+    <link>https://asubedi.com.np/tags/scrapy/</link>
     <description>Recent content in Scrapy on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Sat, 22 Jan 2022 23:20:10 +0545</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://asubedi.com.np/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I come up with my instagram captions using Python and Scrapy</title>
-      <link>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</link>
+      <link>https://asubedi.com.np/blog/how-i-come-with-insta-caption-python-scrapy/</link>
       <pubDate>Sat, 22 Jan 2022 22:21:00 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</guid>
+      <guid>https://asubedi.com.np/blog/how-i-come-with-insta-caption-python-scrapy/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Note: This is an article I wrote a while back. Enjoy&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code. You can make your computer do the hard work for you ;)&lt;/p&gt;</description>
     </item>
   </channel>

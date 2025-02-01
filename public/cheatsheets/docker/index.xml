@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Ashish&#39;s Site</title>
-    <link>http://localhost:1313/cheatsheets/docker/</link>
+    <link>https://asubedi.com.np/cheatsheets/docker/</link>
     <description>Recent content in Docker on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Sun, 05 Feb 2023 00:40:02 +0545</lastBuildDate>
-    <atom:link href="http://localhost:1313/cheatsheets/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://asubedi.com.np/cheatsheets/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basics</title>
-      <link>http://localhost:1313/cheatsheets/docker/basics/</link>
+      <link>https://asubedi.com.np/cheatsheets/docker/basics/</link>
       <pubDate>Sun, 05 Feb 2023 00:11:31 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>http://localhost:1313/cheatsheets/docker/basics/</guid>
+      <guid>https://asubedi.com.np/cheatsheets/docker/basics/</guid>
       <description>&lt;h4 id=&#34;see-all-running-pods&#34;&gt;See all running pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker ps&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;see-all-ran-pods&#34;&gt;See all ran pods&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker ps -a&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-none-dangling-images&#34;&gt;Remove &amp;lt;none&amp;gt; (dangling) images&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rmi $(docker images -f &amp;quot;dangling=true&amp;quot; -q)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-all-containers&#34;&gt;Remove all containers&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rm $(docker ps -aq)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;remove-images-conatining-keyword&#34;&gt;Remove images conatining keyword&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker rmi -f $(docker images | grep &#39;keyword&#39; | awk &#39;{print $1}&#39;)&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>

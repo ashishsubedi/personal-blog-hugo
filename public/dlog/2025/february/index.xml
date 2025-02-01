@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>February on Ashish&#39;s Site</title>
+    <link>https://asubedi.com.np/dlog/2025/february/</link>
+    <description>Recent content in February on Ashish&#39;s Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
+    <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
+    <lastBuildDate>Sat, 01 Feb 2025 12:04:46 +0545</lastBuildDate>
+    <atom:link href="https://asubedi.com.np/dlog/2025/february/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>February 1: UV Package Manager and AI Agent </title>
+      <link>https://asubedi.com.np/dlog/2025/february/1/</link>
+      <pubDate>Sat, 01 Feb 2025 12:04:46 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>https://asubedi.com.np/dlog/2025/february/1/</guid>
+      <description>&lt;p&gt;Hello everyone! It&amp;rsquo;s been a while since my last log. I&amp;rsquo;ve been quite busy lately, but here I am. Cheers to the new update!&lt;/p&gt;&#xA;&lt;p&gt;Jumping into the development world, I&amp;rsquo;ve completely switched to &lt;a href=&#34;https://astral.sh/blog/uv&#34;&gt;uv&lt;/a&gt; for my Python project development. The package management is quite good, and the package resolution is &lt;strong&gt;FAAAAASST&lt;/strong&gt;!! Gone are the days of waiting for dependencies to resolve when adding a new package. Working with &lt;code&gt;pyproject.toml&lt;/code&gt; has been awesome so far.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
