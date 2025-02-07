@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>July on Ashish&#39;s Site</title>
-    <link>https://asubedi.com.np/dlog/2024/july/</link>
+    <link>http://localhost:1313/dlog/2024/july/</link>
     <description>Recent content in July on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Wed, 09 Oct 2024 19:34:55 +0545</lastBuildDate>
-    <atom:link href="https://asubedi.com.np/dlog/2024/july/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/dlog/2024/july/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>July 23: Easy git checkout</title>
-      <link>https://asubedi.com.np/dlog/2024/july/23/</link>
+      <link>http://localhost:1313/dlog/2024/july/23/</link>
       <pubDate>Tue, 23 Jul 2024 20:20:51 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/dlog/2024/july/23/</guid>
+      <guid>http://localhost:1313/dlog/2024/july/23/</guid>
       <description>&lt;p&gt;Hello again! This is going to be a short one.&#xA;Ever had the moment when you are working in multiple branches and you have to switch between them? I have.&#xA;Recently, I&amp;rsquo;ve been using two shortcut quite a lot.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Git provides us a handy shortcut for this situation.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;This command checkouts to the previous working branch. This is quite helpful when you&amp;rsquo;re juggling between 2 branches.&lt;/p&gt;</description>
     </item>
     <item>
       <title>July 12: Value from Nested Dicts/List</title>
-      <link>https://asubedi.com.np/dlog/2024/july/12/</link>
+      <link>http://localhost:1313/dlog/2024/july/12/</link>
       <pubDate>Fri, 12 Jul 2024 20:33:43 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/dlog/2024/july/12/</guid>
+      <guid>http://localhost:1313/dlog/2024/july/12/</guid>
       <description>&lt;p&gt;Hey readers, thanks for coming back here. While working on one of the bugfixes for a new project, I came across an interesting piece of code written by one of my colleague. The basic idea is of the problem is to get a value from dict with lots of nested objects, about 5-6 levels deep. There are quite a few variants of dict that we get, but for a variation, path of keys is same. For an example, consider the following dict.&lt;/p&gt;</description>
     </item>
   </channel>
