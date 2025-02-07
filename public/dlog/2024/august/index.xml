@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>August on Ashish&#39;s Site</title>
-    <link>https://asubedi.com.np/dlog/2024/august/</link>
+    <link>http://localhost:1313/dlog/2024/august/</link>
     <description>Recent content in August on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Wed, 09 Oct 2024 19:34:55 +0545</lastBuildDate>
-    <atom:link href="https://asubedi.com.np/dlog/2024/august/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/dlog/2024/august/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>August 7: Facade Layer Design</title>
-      <link>https://asubedi.com.np/dlog/2024/august/7/</link>
+      <link>http://localhost:1313/dlog/2024/august/7/</link>
       <pubDate>Wed, 07 Aug 2024 22:18:44 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/dlog/2024/august/7/</guid>
+      <guid>http://localhost:1313/dlog/2024/august/7/</guid>
       <description>&lt;p&gt;Hello everyone, welcome back! Today was a productive day for me as I got to work with pure SQL and fully implemented metering logic within a MySQL Stored Procedure. More about that coming soon!&lt;/p&gt;&#xA;&lt;p&gt;For now, let&amp;rsquo;s talk about the  &lt;a href=&#34;https://refactoring.guru/design-patterns/facade&#34;&gt;facade design pattern&lt;/a&gt;. In my workplace, we have a facade layer implementation, which serves as a central point of communication for the frontend layer (and some backend APIs). The job of this layer is to provide endpoints of internal APIs to the public through the facade, hence the name. This is implemented in FastAPI.&lt;/p&gt;</description>
     </item>
   </channel>

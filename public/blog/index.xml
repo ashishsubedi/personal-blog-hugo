@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Ashish&#39;s Site</title>
-    <link>https://asubedi.com.np/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in Blogs on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Sun, 05 Feb 2023 00:40:02 +0545</lastBuildDate>
-    <atom:link href="https://asubedi.com.np/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cheatsheets</title>
-      <link>https://asubedi.com.np/blog/cheatsheets/</link>
+      <link>http://localhost:1313/blog/cheatsheets/</link>
       <pubDate>Sun, 05 Feb 2023 00:28:16 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/blog/cheatsheets/</guid>
-      <description>&lt;p&gt;=============  Website Update alert!!! ===============&lt;/p&gt;&#xA;&lt;p&gt;Hello there, hope you&amp;rsquo;re having a wonderful day.&lt;/p&gt;&#xA;&lt;p&gt;New section &lt;a href=&#34;https://asubedi.com.np/cheatsheets/&#34;&gt;&lt;strong&gt;Cheatsheets&lt;/strong&gt;&lt;/a&gt; is added in the website.&lt;/p&gt;&#xA;&lt;p&gt;As of today, it contains the sections:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://asubedi.com.np/cheatsheets/gcloud/&#34;&gt;Gcloud&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://asubedi.com.np/cheatsheets/docker/&#34;&gt;Docker&lt;/a&gt;, and&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://asubedi.com.np/cheatsheets/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This sheets will contains things that I use regularly, but can&amp;rsquo;t bother to remember them.&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s it folk, see ya!&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/cheatsheets/</guid>
+      <description>&lt;p&gt;=============  Website Update alert!!! ===============&lt;/p&gt;&#xA;&lt;p&gt;Hello there, hope you&amp;rsquo;re having a wonderful day.&lt;/p&gt;&#xA;&lt;p&gt;New section &lt;a href=&#34;http://localhost:1313/cheatsheets/&#34;&gt;&lt;strong&gt;Cheatsheets&lt;/strong&gt;&lt;/a&gt; is added in the website.&lt;/p&gt;&#xA;&lt;p&gt;As of today, it contains the sections:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/gcloud/&#34;&gt;Gcloud&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/docker/&#34;&gt;Docker&lt;/a&gt;, and&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/cheatsheets/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This sheets will contains things that I use regularly, but can&amp;rsquo;t bother to remember them.&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s it folk, see ya!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Making My Life Easier with Bash/Zsh Function</title>
-      <link>https://asubedi.com.np/blog/make-pyenv-life-easier/</link>
+      <link>http://localhost:1313/blog/make-pyenv-life-easier/</link>
       <pubDate>Sat, 14 Jan 2023 09:02:39 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/blog/make-pyenv-life-easier/</guid>
+      <guid>http://localhost:1313/blog/make-pyenv-life-easier/</guid>
       <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;&#xA;&lt;p&gt;Hello everyone, it&amp;rsquo;s been such a long time since my last blog. Life&amp;rsquo;s been busy and have not been able to update the blog as I thought I would. Anyway, new post incoming.&lt;/p&gt;&#xA;&lt;p&gt;Unlike every other people on the planet, I use &lt;code&gt;pyenv virtualenv&lt;/code&gt; to create virtualenv. Reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;For me is to easily switch between python version depending on the repo, as my workplace maintains repos with 2 python versions.&lt;/li&gt;&#xA;&lt;li&gt;Also, I like how venv is separate from the main codebase.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;One drawback is that you have to remember the name of the venv that you need for the repo. To overcome this drawback, I started naming my venv with the name of the directory I&amp;rsquo;m currently working on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How I come up with my instagram captions using Python and Scrapy</title>
-      <link>https://asubedi.com.np/blog/how-i-come-with-insta-caption-python-scrapy/</link>
+      <link>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</link>
       <pubDate>Sat, 22 Jan 2022 22:21:00 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/blog/how-i-come-with-insta-caption-python-scrapy/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Note: This is an article I wrote a while back. Enjoy&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code. You can make your computer do the hard work for you ;)&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/how-i-come-with-insta-caption-python-scrapy/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Note: This is an article I wrote a while back. Enjoy&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Greetings readers! I know that the title is kind of misleading so let me begin with a context. There are days when you click a perfect picture and you want to upload it in instagram, and everyone knows the unwritten rule of any social media — you need to have a caption to match the picture. Now you could go to google or any search engine and search for something that matches the picture but what if you know how to code. You can make your computer do the hard work for you ;)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Upcoming Blogs Idea</title>
-      <link>https://asubedi.com.np/blog/my-second-blog/</link>
+      <link>http://localhost:1313/blog/my-second-blog/</link>
       <pubDate>Wed, 12 Jan 2022 23:55:25 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/blog/my-second-blog/</guid>
+      <guid>http://localhost:1313/blog/my-second-blog/</guid>
       <description>&lt;p&gt;Lately, I&amp;rsquo;ve been learning stuffs about Devops, and mainly focusing on Kubernetes. In few of the upcoming posts, I&amp;rsquo;d like to share some stuffs about my learning process, few blockers I&amp;rsquo;ve faced, and so on. I&amp;rsquo;m also planning to create one post related to how this website is created. Peace out  🤞&lt;/p&gt;</description>
     </item>
     <item>
       <title>Welcome Post</title>
-      <link>https://asubedi.com.np/blog/welcome-post/</link>
+      <link>http://localhost:1313/blog/welcome-post/</link>
       <pubDate>Wed, 12 Jan 2022 17:43:09 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/blog/welcome-post/</guid>
+      <guid>http://localhost:1313/blog/welcome-post/</guid>
       <description>&lt;p&gt;This is my first post. I&amp;rsquo;m trying to create my blog using hugo, let&amp;rsquo;s see how this works. I&amp;rsquo;ll try to keep this site updated. Hopefully.&lt;/p&gt;</description>
     </item>
   </channel>

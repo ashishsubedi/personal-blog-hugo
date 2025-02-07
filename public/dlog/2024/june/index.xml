@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>June on Ashish&#39;s Site</title>
-    <link>https://asubedi.com.np/dlog/2024/june/</link>
+    <link>http://localhost:1313/dlog/2024/june/</link>
     <description>Recent content in June on Ashish&#39;s Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
     <lastBuildDate>Wed, 26 Jun 2024 01:28:00 +0545</lastBuildDate>
-    <atom:link href="https://asubedi.com.np/dlog/2024/june/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/dlog/2024/june/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>June 26</title>
-      <link>https://asubedi.com.np/dlog/2024/june/26/</link>
+      <link>http://localhost:1313/dlog/2024/june/26/</link>
       <pubDate>Wed, 26 Jun 2024 01:18:12 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/dlog/2024/june/26/</guid>
+      <guid>http://localhost:1313/dlog/2024/june/26/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s already around 1:30 AM. It took a long time for me to figure out the table of contents for dev log.&lt;/p&gt;&#xA;&lt;p&gt;This feels like meta dev log lol. Anyway, I guess the result turned out to be okayish. Goodnight.&lt;/p&gt;</description>
     </item>
     <item>
       <title>June 25</title>
-      <link>https://asubedi.com.np/dlog/2024/june/25/</link>
+      <link>http://localhost:1313/dlog/2024/june/25/</link>
       <pubDate>Tue, 25 Jun 2024 22:24:06 +0545</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
-      <guid>https://asubedi.com.np/dlog/2024/june/25/</guid>
+      <guid>http://localhost:1313/dlog/2024/june/25/</guid>
       <description>&lt;p&gt;Beginning of my dev log, inspired from &lt;a href=&#34;https://utsavdarlami.github.io/dlog/&#34;&gt;https://utsavdarlami.github.io/dlog/&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
   </channel>
