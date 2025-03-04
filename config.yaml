@@ -28,7 +28,7 @@ params:
   hideHeaderLinks: true
   search: true
   showThemeSwitcher: true
-  defaultDarkTheme: false
+  defaultDarkTheme: true
   moveFooterToHeader: true
   navTitleText: Ashish's Site
   logoAlt: Ashish's Site
