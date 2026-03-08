@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=65229&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.145.0">
-  <link rel="canonical" href="http://localhost:1313/dlog/2024/august/7/" />
+  <meta name="generator" content="Hugo 0.157.0">
+  <link rel="canonical" href="http://localhost:65229/dlog/2024/august/7/" />
 
   
     
@@ -14,11 +14,11 @@
 For now, let’s talk about the facade design pattern. In my workplace, we have a facade layer implementation, which serves as a central point of communication for the frontend layer (and some backend APIs). The job of this layer is to provide endpoints of internal APIs to the public through the facade, hence the name. This is implemented in FastAPI.">
   
 
-  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png"> 
-  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png"> 
-  <link rel="manifest" href="http://localhost:1313/site.webmanifest"> 
-  <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg" color="#000000"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:65229/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:65229/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:65229/favicon-16x16.png"> 
+  <link rel="manifest" href="http://localhost:65229/site.webmanifest"> 
+  <link rel="mask-icon" href="http://localhost:65229/safari-pinned-tab.svg" color="#000000"> 
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
@@ -171,7 +171,7 @@ For now, let’s talk about the facade design pattern. In my workplace, we have 
     <div class="intro">
       <a
         class="logo"
-        href="http://localhost:1313/"
+        href="http://localhost:65229/"
         aria-label="Ashish&#39;s Site home page"
       >
         
@@ -339,7 +339,56 @@ For now, let’s talk about the facade design pattern. In my workplace, we have 
           
             
                 <details >
-                    <summary><a href="/dlog/2025/" >March</a></summary>
+                    <summary><a href="/dlog/2026/" >2026</a></summary>
+                    
+                    
+<ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
+    
+        <li>
+            
+            
+
+          
+            
+                <details >
+                    <summary><a href="/dlog/2026/march/" >March</a></summary>
+                    
+                    
+<ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
+    
+        <li>
+            
+            
+
+          
+            
+                <a href="/dlog/2026/march/8/" >March 8: I kinda understand LLM deployment</a>
+            
+
+        </li>
+    
+</ul>
+
+                </details>
+            
+
+        </li>
+    
+</ul>
+
+                </details>
+            
+
+        </li>
+    
+        <li>
+            
+            
+
+          
+            
+                <details >
+                    <summary><a href="/dlog/2025/" >2025</a></summary>
                     
                     
 <ul style="list-style-type: none;margin-top: 0; margin-left: 2ex;">
@@ -614,7 +663,8 @@ For now, let’s talk about the facade design pattern. In my workplace, we have 
 <p>Currently, in the facade layer, when someone needs to add a new layer, they create a FastAPI endpoint, add some function to perform pre-processing with data if necessary, call another service(s), then post-process the data if required, and serve it. Simple enough, right?</p>
 <p>This got me thinking: this could be done using a JSON config where you just define the endpoints you want to expose, the backend endpoint that the request will be routed through, and run pre/post-processing functions if required. I have created a POC of this design in FastAPI, so let&rsquo;s talk about it.</p>
 <blockquote>
-<p>Github: <a href="https://github.com/ashishsubedi/facade_experiments">https://github.com/ashishsubedi/facade_experiments</a></p></blockquote>
+<p>Github: <a href="https://github.com/ashishsubedi/facade_experiments">https://github.com/ashishsubedi/facade_experiments</a></p>
+</blockquote>
 <h2 id="file-structure">File Structure</h2>
 <pre><code>├── helpers
 ├── main.py
@@ -732,7 +782,8 @@ for route, config in route_configs.items():
 <li><strong>Dynamic Route Generation</strong>: Here, we get the necessary configs and use FastAPI&rsquo;s <code>add_api_route</code> method to dynamically add the route.</li>
 </ul>
 <blockquote>
-<p>Github: <a href="https://github.com/ashishsubedi/facade_experiments">https://github.com/ashishsubedi/facade_experiments</a></p></blockquote>
+<p>Github: <a href="https://github.com/ashishsubedi/facade_experiments">https://github.com/ashishsubedi/facade_experiments</a></p>
+</blockquote>
 <p>This structure allows us to seamlessly integrate the facade design pattern with FastAPI by defining the routes and processing logic in a JSON configuration file. You can go to the /docs endpoint to see the generated endpoints and test them out.</p>
 <p>I hope this was informative to you as it was to me. See you soon, peace out!</p>
 
