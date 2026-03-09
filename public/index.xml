@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
-    <lastBuildDate>Sun, 08 Mar 2026 23:51:10 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 00:03:00 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Kinda Understand LLM Serving</title>
+      <link>http://localhost:1313/blog/i-kinda-understand-llm-deployment/</link>
+      <pubDate>Mon, 09 Mar 2026 00:03:00 +0100</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>http://localhost:1313/blog/i-kinda-understand-llm-deployment/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;LLM is used in every stage of this blog (learning, coding, and writing of this blog).&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Greetings! Welcome aboard to my humble blog. Recently, I have been trying to understand the internals of LLM serving. &amp;ldquo;Why?&amp;rdquo; you ask? Okay, let me rant. I use Ollama for local model deployment on my M4 MacBook. What I noticed is that it struggles to handle concurrent requests efficiently. I gave vLLM a try, and the difference in high-throughput handling was noticeable. Long story short, vLLM is awesome for high-throughput serving -&amp;gt; wanted to understand exactly what sets it apart from Ollama -&amp;gt; read the original paper published by the vLLM team -&amp;gt; learned about continuous batching and PagedAttention -&amp;gt; spent hours vibecoding and benchmarking my own implementation -&amp;gt; and now I am blogging about it!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>March 8: I kinda understand LLM deployment</title>
       <link>http://localhost:1313/dlog/2026/march/8/</link>
