@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.158.0">
-  <link rel="canonical" href="https://asubedi.com.np/dlog/2026/march/8/" />
+  <link rel="canonical" href="https://asubedi.com.np/blog/speculative-decoding/" />
 
   
     
-    <meta name="description" content="Welcome aboard to my humble dlog. It’s been more than a year since my last update. A lot of new things have happened in my life, so I haven’t been able to provide updates. But here I am, working on new things, learning cool stuff, and building more than ever before, all thanks to the AI revolution.
-For over a year now, I’ve been focused on my master’s study. I had some free time this month and have worked on two projects. I’ve written a detailed blog titled I kinda understand LLM deployment. Please check it out and have fun learning about all the cool things that go on under the hood during deployment. My next project is ongoing, and hopefully, you’ll hear about it soon. Until then, peace out!">
+    <meta name="description" content=" This is part 2 of the LLM inference series. Part 1: I Kinda Understand LLM Serving.
+Introduction Greetings! In the last post, I went through continuous batching and PagedAttention. This time we are looking at Speculative Decoding, a technique that speeds up LLM generation without any loss in output quality.
+The idea: use a small, fast model to guess what the big model would say, then verify all those guesses in one shot. If the guesses are correct, you got free tokens. If some are wrong, you fix them and move on. The output is mathematically identical to just running the big model directly. No quality loss. Just speed.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://asubedi.com.np/apple-touch-icon.png">
@@ -57,7 +58,7 @@ For over a year now, I’ve been focused on my master’s study. I had some free
 
   
   
-  <title>March 8: I kinda understand LLM deployment | Ashish&#39;s Site</title>
+  <title>Speculative Decoding | Ashish&#39;s Site</title>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_6XSAugkYSnMo5fLiWS8vjWjocwMvuuhLwXhn1KD4QNf',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only' 
@@ -213,7 +214,7 @@ For over a year now, I’ve been focused on my master’s study. I had some free
       
       
 
-      <a href="/blog/" >
+      <a href="/blog/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -305,16 +306,13 @@ For over a year now, I’ve been focused on my master’s study. I had some free
           
   <main id="main">
 
-    <h1>March 8: I kinda understand LLM deployment</h1>    
+    <h1>Speculative Decoding</h1>    
     <div class="date">
       
       
-      <strong>Publish date: </strong>Mar 8, 2026
+      <strong>Publish date: </strong>Jun 3, 2026
       
       
-          <br>
-          <strong>Last updated: </strong>May 15, 2026
-          
           
         </div>
         
@@ -338,7 +336,7 @@ For over a year now, I’ve been focused on my master’s study. I had some free
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2026/" >2026</a></summary>
                     
                     
@@ -380,7 +378,7 @@ For over a year now, I’ve been focused on my master’s study. I had some free
 
           
             
-                <details open>
+                <details >
                     <summary><a href="/dlog/2026/march/" >March</a></summary>
                     
                     
@@ -392,7 +390,7 @@ For over a year now, I’ve been focused on my master’s study. I had some free
 
           
             
-                <a href="/dlog/2026/march/8/" class="current-page">March 8: I kinda understand LLM deployment</a>
+                <a href="/dlog/2026/march/8/" >March 8: I kinda understand LLM deployment</a>
             
 
         </li>
@@ -688,8 +686,244 @@ For over a year now, I’ve been focused on my master’s study. I had some free
  
 
 
-        <p>Welcome aboard to my humble dlog. It&rsquo;s been more than a year since my last update. A lot of new things have happened in my life, so I haven&rsquo;t been able to provide updates. But here I am, working on new things, learning cool stuff, and building more than ever before, all thanks to the AI revolution.</p>
-<p>For over a year now, I&rsquo;ve been focused on my master&rsquo;s study. I had some free time this month and have worked on two projects. I&rsquo;ve written a detailed blog titled <a href="/blog/i-kinda-understand-llm-deployment/">I kinda understand LLM deployment</a>. Please check it out and have fun learning about all the cool things that go on under the hood during deployment. My next project is ongoing, and hopefully, you&rsquo;ll hear about it soon. Until then, peace out!</p>
+        <blockquote>
+<p>This is part 2 of the LLM inference series. Part 1: <a href="/blog/i-kinda-understand-llm-deployment/">I Kinda Understand LLM Serving</a>.</p>
+</blockquote>
+<h1 id="introduction">Introduction</h1>
+<p>Greetings! In the <a href="/blog/i-kinda-understand-llm-deployment/">last post</a>, I went through continuous batching and PagedAttention. This time we are looking at <strong>Speculative Decoding</strong>, a technique that speeds up LLM generation without any loss in output quality.</p>
+<p>The idea: use a small, fast model to guess what the big model would say, then verify all those guesses in one shot. If the guesses are correct, you got free tokens. If some are wrong, you fix them and move on. The output is mathematically identical to just running the big model directly. No quality loss. Just speed.</p>
+<p>Two papers independently arrived at essentially the same idea around the same time:</p>
+<ol>
+<li>Google&rsquo;s <em>&ldquo;Fast Inference from Transformers via Speculative Decoding&rdquo;</em> [1]</li>
+<li>DeepMind&rsquo;s <em>&ldquo;Accelerating Large Language Model Decoding with Speculative Sampling&rdquo;</em> [2]</li>
+</ol>
+<p>And at the end I will cover <em>Speculative Speculative Decoding</em> [3], a recent paper that takes the same idea one level deeper.</p>
+<hr>
+<h1 id="autoregressive-inference">Autoregressive Inference</h1>
+<p>Quick refresher on how decoding normally works.</p>
+<p>When you send a prompt to an LLM, there are two phases:</p>
+<p><strong>Prefill</strong>: The model processes your entire prompt in one go. All input tokens are fed through the transformer in parallel. This is fast and GPU-friendly.</p>
+<p><strong>Decode</strong>: The model generates tokens one at a time. It samples token 1, feeds it back in, samples token 2, feeds that back in, and so on until done.</p>
+<p>This second part is the bottleneck. Every single token generation requires a full forward pass through the entire model. And this is not slow because the GPU is not doing enough math. It is slow because of <strong>memory bandwidth</strong>.</p>
+<p>A 70B parameter model has ~140GB of weights (in fp16). Every time you do a forward pass, those weights need to be read from HBM (the GPU&rsquo;s high bandwidth memory) into the compute units. That data movement is the bottleneck. When generating tokens one by one, you are doing this giant weight-loading exercise for every single token, even though you are only getting one token out of it each time.</p>
+<p>As put in [2]:</p>
+<blockquote>
+<p><em>&ldquo;A memory bound model call only generates a single token for every sequence in the batch, hence generating multiple tokens introduces a large amount of latency in any system which makes use of it.&rdquo;</em></p>
+</blockquote>
+<p>So the real question becomes: can we load those weights once and squeeze out multiple tokens?</p>
+<p>In code, normal autoregressive sampling looks like this:</p>
+<pre><code class="language-python">import torch
+
+def autoregressive_sample(model, prompt_ids, max_new_tokens):
+    input_ids = prompt_ids.clone()
+
+    for _ in range(max_new_tokens):
+        with torch.no_grad():
+            logits = model(input_ids).logits  # full forward pass
+        
+        # sample next token from distribution
+        next_token = torch.multinomial(
+            torch.softmax(logits[:, -1, :], dim=-1), num_samples=1
+        )
+        input_ids = torch.cat([input_ids, next_token], dim=-1)
+
+    return input_ids
+</code></pre>
+<p>One forward pass. One token. Repeat <code>max_new_tokens</code> times. For a 70B model generating 200 tokens, that is 200 full round-trips through 140GB of weights.</p>
+<hr>
+<h1 id="speculative-decoding">Speculative Decoding</h1>
+<p>The key observation is that not every token is equally hard to predict. If I am generating <code>The Eiffel Tower is located in ___</code>, the word &ldquo;Paris&rdquo; is dead obvious, a tiny model would get it right. But for complex multi-step reasoning or something creative, the big model&rsquo;s judgment matters a lot more.</p>
+<p>Speculative decoding delegates the &ldquo;easy&rdquo; tokens to a small, fast model. Instead of trying to figure out which tokens are &ldquo;easy&rdquo; upfront (which is hard), it lets the small model guess a batch of tokens, and then uses the big model to verify all of them at once. Correct guesses are free tokens. Wrong guesses get fixed.</p>
+<p>The two models are:</p>
+<ul>
+<li><strong>Draft model</strong> (<code>M_q</code>): small and fast, used for speculation</li>
+<li><strong>Target model</strong> (<code>M_p</code>): big and accurate, used for verification</li>
+</ul>
+<p><img src="/images/speculative-decoding/autoregressive-vs-speculative.svg" alt="Autoregressive vs Speculative Decoding"></p>
+<p>The win: if the small model gets 3 out of 4 tokens right, you got 3 tokens for the cost of roughly 1 big model call (plus some cheap small model calls).</p>
+<h2 id="how-parallel-verification-works">How Parallel Verification Works</h2>
+<p>When the draft model gives you <code>[guess₁, guess₂, guess₃, guess₄]</code>, you need to know:</p>
+<ul>
+<li>What would the target model predict at position 1 (given just the prefix)?</li>
+<li>What would it predict at position 2 (given prefix + guess₁)?</li>
+<li>What would it predict at position 3 (given prefix + guess₁ + guess₂)?</li>
+<li>&hellip;and so on.</li>
+</ul>
+<p>These look like 4 separate questions with 4 separate contexts, requiring 4 separate forward passes. But they do not, because of <strong>causal masking</strong>.</p>
+<p>During training, transformers process the entire sequence at once and use a causal mask to make sure each position can only attend to positions <em>before</em> it. When the model processes token at position <code>i</code>, it only &ldquo;sees&rdquo; tokens at positions <code>0</code> through <code>i-1</code>. This is what makes teacher-forcing possible during training.</p>
+<p>That exact same property works for verification. A single forward pass with the input:</p>
+<pre><code>[prefix_token_1, prefix_token_2, ..., prefix_token_t, guess₁, guess₂, guess₃, guess₄]
+</code></pre>
+<p>produces the output at position <code>t</code> giving us <code>p(· | prefix)</code>, position <code>t+1</code> giving us <code>p(· | prefix, guess₁)</code>, position <code>t+2</code> giving us <code>p(· | prefix, guess₁, guess₂)</code>, and so on. <strong>All in one forward pass.</strong></p>
+<p><img src="/images/speculative-decoding/causal-mask-verification.svg" alt="Parallel Verification via Causal Masking"></p>
+<p>A transformer&rsquo;s forward pass over a sequence of length <code>n</code> already computes next-token distributions at all <code>n</code> positions simultaneously. We are just using that existing property for verification instead of training.</p>
+<p>In PyTorch, this forward pass looks like:</p>
+<pre><code class="language-python">import torch
+import torch.nn.functional as F
+
+def get_target_distributions(target_model, prefix_ids, draft_ids):
+    &quot;&quot;&quot;
+    Run target model once on prefix + draft tokens.
+    Returns the probability distributions at each draft position.
+    &quot;&quot;&quot;
+    # Concatenate prefix + all draft tokens into one sequence
+    full_sequence = torch.cat([prefix_ids, draft_ids], dim=-1)  # (1, prefix_len + gamma)
+
+    with torch.no_grad():
+        logits = target_model(full_sequence).logits  # (1, prefix_len + gamma, vocab_size)
+
+    # We want distributions starting from the last prefix token position
+    # Output at position (prefix_len - 1) predicts the first draft token
+    # Output at position (prefix_len) predicts what comes after draft token 1
+    # ...and so on
+    prefix_len = prefix_ids.shape[-1]
+    gamma = draft_ids.shape[-1]
+
+    # Extract distributions at draft positions (and one extra for the bonus token)
+    relevant_logits = logits[:, prefix_len - 1: prefix_len + gamma, :]  # (1, gamma+1, vocab_size)
+    distributions = F.softmax(relevant_logits, dim=-1)  # (1, gamma+1, vocab_size)
+
+    return distributions  # gamma+1 distributions: for each draft token + bonus
+</code></pre>
+<p>So you get <code>γ + 1</code> distributions out of a single forward pass. That is what makes the whole thing work.</p>
+<h2 id="the-rejection-sampling-algorithm">The Rejection Sampling Algorithm</h2>
+<p>Here is the algorithm from [2]:</p>
+<pre><code>Algorithm: SpeculativeDecodingStep
+────────────────────────────────────────────────────────────────
+Inputs: Mp (target model), Mq (draft model), prefix
+
+1. Sample γ draft tokens from Mq autoregressively:
+   for i = 1 to γ:
+       qᵢ(x) ← Mq(prefix + [x₁, ..., xᵢ₋₁])
+       xᵢ ~ qᵢ(x)
+
+2. Run Mp once on the full sequence to get target distributions:
+   p₁(x), ..., pᵧ₊₁(x) ← Mp(prefix), ..., Mp(prefix + [x₁, ..., xᵧ])
+   (one parallel forward pass)
+
+3. Find the first rejected draft token:
+   For each i = 1 to γ:
+       draw rᵢ ~ Uniform(0, 1)
+       if rᵢ &gt; pᵢ(xᵢ) / qᵢ(xᵢ):
+           reject xᵢ, set n = i - 1, break
+   if all accepted, n = γ
+
+4. Sample a correction token at the rejection point:
+   if n &lt; γ:
+       sample from norm(max(0, pₙ₊₁(x) - qₙ₊₁(x)))
+   else:
+       sample from pᵧ₊₁(x)   ← bonus token!
+
+Return: prefix + [x₁, ..., xₙ, correction_token]
+────────────────────────────────────────────────────────────────
+</code></pre>
+<p>The rejection sampling step (step 3) is the clever part. For each draft token, we accept it with probability <code>min(1, p(token) / q(token))</code>:</p>
+<ul>
+<li>If the big model agrees with the small model (or likes the token even more), we just take it.</li>
+<li>If the big model thinks this token is less likely than the draft model did, we accept it only sometimes, proportional to how much less likely it is.</li>
+</ul>
+<p>Step 4 keeps the output distribution exactly correct. When we reject a token, instead of just sampling from <code>p</code> directly, we sample from <code>p - q</code> (normalized, with negative values clamped to 0). This correction accounts for the fact that we already rejected some probability mass. The result: the whole process produces tokens with the same distribution as running the big model alone.</p>
+<p><img src="/images/speculative-decoding/rejection-sampling.svg" alt="Rejection Sampling Flow"></p>
+<p>Here is the full speculative decoding step in code:</p>
+<pre><code class="language-python">import torch
+import torch.nn.functional as F
+
+def speculative_decode_step(target_model, draft_model, prefix_ids, gamma=4):
+    &quot;&quot;&quot;
+    One step of speculative decoding.
+    Returns an extended prefix with 1 to gamma+1 new tokens.
+    &quot;&quot;&quot;
+    vocab_size = target_model.config.vocab_size
+    draft_ids = []
+    draft_probs = []
+
+    # Step 1: Draft gamma tokens using the small model
+    current_ids = prefix_ids.clone()
+    for _ in range(gamma):
+        with torch.no_grad():
+            draft_logits = draft_model(current_ids).logits[:, -1, :]
+        draft_dist = F.softmax(draft_logits, dim=-1)  # (1, vocab_size)
+        next_token = torch.multinomial(draft_dist, num_samples=1)  # (1, 1)
+        
+        draft_ids.append(next_token)
+        draft_probs.append(draft_dist[0, next_token[0, 0]])  # scalar probability
+        current_ids = torch.cat([current_ids, next_token], dim=-1)
+
+    draft_ids_tensor = torch.cat(draft_ids, dim=-1)  # (1, gamma)
+
+    # Step 2: Score all draft tokens with the target model in ONE forward pass
+    full_seq = torch.cat([prefix_ids, draft_ids_tensor], dim=-1)
+    with torch.no_grad():
+        target_logits = target_model(full_seq).logits  # (1, prefix_len+gamma, vocab_size)
+
+    prefix_len = prefix_ids.shape[-1]
+    target_dists = F.softmax(
+        target_logits[:, prefix_len - 1: prefix_len + gamma, :], dim=-1
+    )  # (1, gamma+1, vocab_size) -- the +1 is the bonus token distribution
+
+    # Step 3: Accept or reject each draft token
+    n_accepted = 0
+    for i in range(gamma):
+        token_id = draft_ids[i][0, 0]
+        p_i = target_dists[0, i, token_id]   # target model's prob for this token
+        q_i = draft_probs[i]                  # draft model's prob for this token
+
+        r = torch.rand(1).item()
+        acceptance_prob = min(1.0, (p_i / q_i).item())
+
+        if r &lt; acceptance_prob:
+            n_accepted += 1
+        else:
+            break  # reject this token and everything after it
+
+    # Step 4: Sample the correction/bonus token
+    if n_accepted &lt; gamma:
+        # Adjust distribution at the rejection point to correct for bias
+        reject_dist = target_dists[0, n_accepted, :]   # p_{n+1}
+        draft_dist_at_reject = F.softmax(
+            draft_model(torch.cat([prefix_ids, draft_ids_tensor[:, :n_accepted]], dim=-1)).logits[:, -1, :],
+            dim=-1
+        )[0]   # q_{n+1}
+        corrected = F.relu(reject_dist - draft_dist_at_reject)
+        corrected = corrected / corrected.sum()
+        bonus_token = torch.multinomial(corrected, num_samples=1)
+    else:
+        # All accepted! Sample a bonus token from the target model
+        bonus_token = torch.multinomial(target_dists[0, gamma, :], num_samples=1).unsqueeze(0)
+
+    # Return prefix + accepted draft tokens + correction/bonus token
+    accepted_draft = draft_ids_tensor[:, :n_accepted]
+    new_ids = torch.cat([prefix_ids, accepted_draft, bonus_token], dim=-1)
+    return new_ids
+</code></pre>
+<p>In practice you would want to be smarter about KV cache management (the draft model builds up a cache too, which needs to be rewound on rejection) and batch multiple sequences, but this captures the core logic.</p>
+<hr>
+<h1 id="results">Results</h1>
+<p>Both papers show solid speedups.</p>
+<p><strong>DeepMind</strong> [2] tested on Chinchilla 70B and got <strong>2-2.5x speedup</strong> in a distributed setup. The output distribution is provably unchanged. Not &ldquo;approximately the same&rdquo;, literally identical.</p>
+<p><strong>Google</strong> [1] tested on T5-XXL (11B) and got <strong>2-3x speedup</strong> over their standard T5X implementation, also with identical outputs.</p>
+<p>Two groups, same idea, same time period, similar results. That usually means the idea is right.</p>
+<p>The speedup you get in practice depends on the <strong>acceptance rate</strong>, how often the draft model&rsquo;s guesses pass the rejection test. If the draft model is bad, most tokens get rejected and you are just doing extra work for nothing. If it is good, you can get 4-5 accepted tokens per target model call and the speedup is real. The acceptance rate also depends on the task: repetitive or formulaic text (code boilerplate, translations of common phrases) tends to have high acceptance rates. Creative or highly constrained generation tends to be lower.</p>
+<hr>
+<h1 id="further-improvements-speculative-speculative-decoding">Further Improvements: Speculative Speculative Decoding</h1>
+<p>Standard speculative decoding still has one sequential dependency: you draft a batch, wait for verification, then draft the next batch. Even though verification is fast (one forward pass), you cannot start drafting the next batch until you know what got accepted.</p>
+<p><em>Speculative Speculative Decoding</em> by Kumar, Dao, and May [3] (ICLR 2026) attacks this. The name is recursive on purpose.</p>
+<p>The idea (called SSD) is to overlap drafting and verification: while the target model is busy verifying batch N, the draft model is <em>already</em> working on batch N+1. It speculatively predicts what the verification outcome will be and generates tokens based on that prediction. If the prediction is right, batch N+1 is ready to go the moment verification finishes, zero wait. If it is wrong, you fall back.</p>
+<p><img src="/images/speculative-decoding/ssd-pipeline.svg" alt="Speculative Speculative Decoding Pipeline"></p>
+<p>The hard part is that verification does not always accept all <code>γ</code> tokens, it might accept 2, or 4, or 0. So the draft model has to prepare for multiple possible outcomes simultaneously. The paper&rsquo;s Saguaro algorithm handles this and gets <strong>~30% speedup on top of already-optimized speculative decoding</strong>, and up to <strong>5x over standard autoregressive decoding</strong> on open-source engines.</p>
+<p>I find this recursive application of the same trick to be a neat idea. Using speculation to hide the latency of the verification step itself.</p>
+<hr>
+<h1 id="wrapping-up">Wrapping Up</h1>
+<p>The main takeaway: autoregressive decoding is bottlenecked by memory bandwidth, not compute. You are paying the cost of loading model weights for every single token. Speculative decoding amortizes that cost by verifying multiple tokens per target model call, using causal masking to make the verification parallel for free. And because of the rejection sampling math, the output is identical to what you would get from just running the big model.</p>
+<p>Speculative decoding has been picked up widely in production systems and is now supported in most major inference frameworks (vLLM, TensorRT-LLM, etc.). If you are doing anything with LLM inference at scale, it is worth understanding properly.</p>
+<p>Next in the series, I will probably look at either continuous batching or disaggregated prefill-decode. Till then. Peace!</p>
+<hr>
+<p><strong>References:</strong></p>
+<ol>
+<li>Yaniv Leviathan, Matan Kalman, Yossi Matias. <em>Fast Inference from Transformers via Speculative Decoding</em>. ICML 2023. <a href="https://arxiv.org/abs/2211.17192">arXiv:2211.17192</a></li>
+<li>Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper. <em>Accelerating Large Language Model Decoding with Speculative Sampling</em>. 2023. <a href="https://arxiv.org/abs/2302.01318">arXiv:2302.01318</a></li>
+<li>Tanishq Kumar, Tri Dao, Avner May. <em>Speculative Speculative Decoding</em>. ICLR 2026. <a href="https://arxiv.org/abs/2603.03251">arXiv:2603.03251</a></li>
+</ol>
 
   </main>
 

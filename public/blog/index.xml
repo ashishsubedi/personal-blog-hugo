@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>iamashishsubedi@gmail.com (Ashish Subedi)</managingEditor>
     <webMaster>iamashishsubedi@gmail.com (Ashish Subedi)</webMaster>
-    <lastBuildDate>Mon, 09 Mar 2026 01:49:19 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 00:12:34 +0200</lastBuildDate>
     <atom:link href="https://asubedi.com.np/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speculative Decoding</title>
+      <link>https://asubedi.com.np/blog/speculative-decoding/</link>
+      <pubDate>Wed, 03 Jun 2026 00:12:34 +0200</pubDate><author>iamashishsubedi@gmail.com (Ashish Subedi)</author>
+      <guid>https://asubedi.com.np/blog/speculative-decoding/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;This is part 2 of the LLM inference series. Part 1: &lt;a href=&#34;https://asubedi.com.np/blog/i-kinda-understand-llm-deployment/&#34;&gt;I Kinda Understand LLM Serving&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Greetings! In the &lt;a href=&#34;https://asubedi.com.np/blog/i-kinda-understand-llm-deployment/&#34;&gt;last post&lt;/a&gt;, I went through continuous batching and PagedAttention. This time we are looking at &lt;strong&gt;Speculative Decoding&lt;/strong&gt;, a technique that speeds up LLM generation without any loss in output quality.&lt;/p&gt;&#xA;&lt;p&gt;The idea: use a small, fast model to guess what the big model would say, then verify all those guesses in one shot. If the guesses are correct, you got free tokens. If some are wrong, you fix them and move on. The output is mathematically identical to just running the big model directly. No quality loss. Just speed.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>I Kinda Understand LLM Serving</title>
       <link>https://asubedi.com.np/blog/i-kinda-understand-llm-deployment/</link>

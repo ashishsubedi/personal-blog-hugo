@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 320" font-family="Consolas, monospace" font-size="13">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="780" height="320" rx="12" fill="url(#bgGrad4)"/>
+
+  <text x="390" y="32" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">Speculative Speculative Decoding (SSD)</text>
+  <text x="390" y="52" fill="#888" font-size="12" text-anchor="middle">Overlapping draft and verification to hide verification latency</text>
+
+  <!-- Standard Spec Dec timeline -->
+  <text x="40" y="90" fill="#8899aa" font-size="12">Standard Speculative Decoding:</text>
+
+  <!-- Draft 1 -->
+  <rect x="40" y="100" width="120" height="35" rx="5" fill="#0f3460" stroke="#1a5276" stroke-width="1"/>
+  <text x="100" y="122" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft₁</text>
+
+  <!-- Verify 1 -->
+  <rect x="165" y="100" width="140" height="35" rx="5" fill="#c62a4f" stroke="#e94560" stroke-width="1"/>
+  <text x="235" y="122" fill="#fff" text-anchor="middle" font-size="11">Verify₁</text>
+
+  <!-- Wait gap -->
+  <rect x="310" y="108" width="25" height="20" rx="3" fill="none" stroke="#555" stroke-dasharray="4,2" stroke-width="1"/>
+  <text x="322" y="122" fill="#555" text-anchor="middle" font-size="9">idle</text>
+
+  <!-- Draft 2 -->
+  <rect x="340" y="100" width="120" height="35" rx="5" fill="#0f3460" stroke="#1a5276" stroke-width="1"/>
+  <text x="400" y="122" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft₂</text>
+
+  <!-- Verify 2 -->
+  <rect x="465" y="100" width="140" height="35" rx="5" fill="#c62a4f" stroke="#e94560" stroke-width="1"/>
+  <text x="535" y="122" fill="#fff" text-anchor="middle" font-size="11">Verify₂</text>
+
+  <!-- Wait gap -->
+  <rect x="610" y="108" width="25" height="20" rx="3" fill="none" stroke="#555" stroke-dasharray="4,2" stroke-width="1"/>
+  <text x="622" y="122" fill="#555" text-anchor="middle" font-size="9">idle</text>
+
+  <!-- ... -->
+  <text x="650" y="122" fill="#555" font-size="14">...</text>
+
+  <!-- Time arrow -->
+  <line x1="40" y1="148" x2="700" y2="148" stroke="#444" stroke-width="1"/>
+  <text x="720" y="152" fill="#666" font-size="11">time →</text>
+
+  <!-- SSD timeline -->
+  <text x="40" y="190" fill="#8899aa" font-size="12">Speculative Speculative Decoding:</text>
+
+  <!-- Draft 1 -->
+  <rect x="40" y="200" width="120" height="35" rx="5" fill="#0f3460" stroke="#1a5276" stroke-width="1"/>
+  <text x="100" y="222" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft₁</text>
+
+  <!-- Verify 1 + overlapping Draft 2 -->
+  <rect x="165" y="200" width="140" height="35" rx="5" fill="#c62a4f" stroke="#e94560" stroke-width="1"/>
+  <text x="235" y="222" fill="#fff" text-anchor="middle" font-size="11">Verify₁</text>
+
+  <!-- Draft 2 runs in parallel with Verify 1 -->
+  <rect x="185" y="242" width="120" height="35" rx="5" fill="#0f3460" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="245" y="264" fill="#4ade80" text-anchor="middle" font-size="11">Draft₂ ⚡</text>
+
+  <!-- Bracket showing overlap -->
+  <line x1="170" y1="200" x2="170" y2="277" stroke="#4ade80" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="305" y1="200" x2="305" y2="277" stroke="#4ade80" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- Verify 2 starts right away -->
+  <rect x="310" y="200" width="140" height="35" rx="5" fill="#c62a4f" stroke="#e94560" stroke-width="1"/>
+  <text x="380" y="222" fill="#fff" text-anchor="middle" font-size="11">Verify₂</text>
+
+  <!-- Draft 3 overlaps -->
+  <rect x="330" y="242" width="120" height="35" rx="5" fill="#0f3460" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="390" y="264" fill="#4ade80" text-anchor="middle" font-size="11">Draft₃ ⚡</text>
+
+  <!-- Verify 3 -->
+  <rect x="455" y="200" width="140" height="35" rx="5" fill="#c62a4f" stroke="#e94560" stroke-width="1"/>
+  <text x="525" y="222" fill="#fff" text-anchor="middle" font-size="11">Verify₃</text>
+
+  <!-- ... -->
+  <text x="610" y="222" fill="#555" font-size="14">...</text>
+
+  <!-- Labels -->
+  <text x="245" y="294" fill="#4ade80" text-anchor="middle" font-size="10">draft runs during verify</text>
+
+  <!-- Time arrow -->
+  <line x1="40" y1="305" x2="700" y2="305" stroke="#444" stroke-width="1"/>
+  <text x="720" y="309" fill="#666" font-size="11">time →</text>
+</svg>

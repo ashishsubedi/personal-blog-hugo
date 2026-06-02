@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" font-family="Consolas, monospace" font-size="13">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="780" height="500" rx="12" fill="url(#bgGrad2)"/>
+
+  <text x="390" y="32" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">Parallel Verification via Causal Masking</text>
+  <text x="390" y="52" fill="#888" font-size="12" text-anchor="middle">Prefix = [A, B, C], Draft tokens = [D, E, F]</text>
+
+  <!-- Input sequence row -->
+  <text x="30" y="90" fill="#8899aa" font-size="12">Input:</text>
+
+  <rect x="100" y="72" width="50" height="30" rx="4" fill="#2d6a4f" stroke="#40916c" stroke-width="1"/>
+  <text x="125" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">A</text>
+  <rect x="160" y="72" width="50" height="30" rx="4" fill="#2d6a4f" stroke="#40916c" stroke-width="1"/>
+  <text x="185" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">B</text>
+  <rect x="220" y="72" width="50" height="30" rx="4" fill="#2d6a4f" stroke="#40916c" stroke-width="1"/>
+  <text x="245" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">C</text>
+
+  <!-- Separator -->
+  <line x1="278" y1="75" x2="278" y2="100" stroke="#555" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <rect x="290" y="72" width="50" height="30" rx="4" fill="#533483" stroke="#7b4fb0" stroke-width="1"/>
+  <text x="315" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">D</text>
+  <rect x="350" y="72" width="50" height="30" rx="4" fill="#533483" stroke="#7b4fb0" stroke-width="1"/>
+  <text x="375" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">E</text>
+  <rect x="410" y="72" width="50" height="30" rx="4" fill="#533483" stroke="#7b4fb0" stroke-width="1"/>
+  <text x="435" y="92" fill="#fff" text-anchor="middle" font-size="13" font-weight="bold">F</text>
+
+  <!-- Labels -->
+  <text x="185" y="118" fill="#40916c" text-anchor="middle" font-size="11">prefix</text>
+  <text x="375" y="118" fill="#7b4fb0" text-anchor="middle" font-size="11">draft tokens</text>
+
+  <!-- Causal mask matrix -->
+  <text x="30" y="155" fill="#8899aa" font-size="12">Causal Mask (what each position attends to):</text>
+
+  <!-- Position labels -->
+  <text x="30" y="187" fill="#aaa" font-size="11">pos 0:</text>
+  <text x="30" y="217" fill="#aaa" font-size="11">pos 1:</text>
+  <text x="30" y="247" fill="#aaa" font-size="11">pos 2:</text>
+  <text x="30" y="277" fill="#aaa" font-size="11">pos 3:</text>
+  <text x="30" y="307" fill="#aaa" font-size="11">pos 4:</text>
+  <text x="30" y="337" fill="#aaa" font-size="11">pos 5:</text>
+
+  <!-- Row 0: [A] -->
+  <rect x="100" y="174" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="190" fill="#fff" text-anchor="middle" font-size="11">A</text>
+
+  <!-- Row 1: [A, B] -->
+  <rect x="100" y="204" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="220" fill="#fff" text-anchor="middle" font-size="11">A</text>
+  <rect x="135" y="204" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="150" y="220" fill="#fff" text-anchor="middle" font-size="11">B</text>
+
+  <!-- Row 2: [A, B, C] -->
+  <rect x="100" y="234" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="250" fill="#fff" text-anchor="middle" font-size="11">A</text>
+  <rect x="135" y="234" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="150" y="250" fill="#fff" text-anchor="middle" font-size="11">B</text>
+  <rect x="170" y="234" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="185" y="250" fill="#fff" text-anchor="middle" font-size="11">C</text>
+
+  <!-- Row 3: [A, B, C, D] -->
+  <rect x="100" y="264" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="280" fill="#fff" text-anchor="middle" font-size="11">A</text>
+  <rect x="135" y="264" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="150" y="280" fill="#fff" text-anchor="middle" font-size="11">B</text>
+  <rect x="170" y="264" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="185" y="280" fill="#fff" text-anchor="middle" font-size="11">C</text>
+  <rect x="205" y="264" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="220" y="280" fill="#fff" text-anchor="middle" font-size="11">D</text>
+
+  <!-- Row 4: [A, B, C, D, E] -->
+  <rect x="100" y="294" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="310" fill="#fff" text-anchor="middle" font-size="11">A</text>
+  <rect x="135" y="294" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="150" y="310" fill="#fff" text-anchor="middle" font-size="11">B</text>
+  <rect x="170" y="294" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="185" y="310" fill="#fff" text-anchor="middle" font-size="11">C</text>
+  <rect x="205" y="294" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="220" y="310" fill="#fff" text-anchor="middle" font-size="11">D</text>
+  <rect x="240" y="294" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="255" y="310" fill="#fff" text-anchor="middle" font-size="11">E</text>
+
+  <!-- Row 5: [A, B, C, D, E, F] -->
+  <rect x="100" y="324" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="115" y="340" fill="#fff" text-anchor="middle" font-size="11">A</text>
+  <rect x="135" y="324" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="150" y="340" fill="#fff" text-anchor="middle" font-size="11">B</text>
+  <rect x="170" y="324" width="30" height="22" rx="3" fill="#2d6a4f" opacity="0.8"/>
+  <text x="185" y="340" fill="#fff" text-anchor="middle" font-size="11">C</text>
+  <rect x="205" y="324" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="220" y="340" fill="#fff" text-anchor="middle" font-size="11">D</text>
+  <rect x="240" y="324" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="255" y="340" fill="#fff" text-anchor="middle" font-size="11">E</text>
+  <rect x="275" y="324" width="30" height="22" rx="3" fill="#533483" opacity="0.8"/>
+  <text x="290" y="340" fill="#fff" text-anchor="middle" font-size="11">F</text>
+
+  <!-- Output distributions (right side) -->
+  <text x="470" y="155" fill="#8899aa" font-size="12">Outputs (one forward pass produces all):</text>
+
+  <!-- Output arrows and descriptions -->
+  <text x="470" y="250" fill="#40916c" font-size="12">out[2]: p(· | A,B,C)</text>
+  <text x="680" y="250" fill="#fbbf24" font-size="12">→ verify D</text>
+
+  <text x="470" y="280" fill="#7b4fb0" font-size="12">out[3]: p(· | A,B,C,D)</text>
+  <text x="680" y="280" fill="#fbbf24" font-size="12">→ verify E</text>
+
+  <text x="470" y="310" fill="#7b4fb0" font-size="12">out[4]: p(· | A,B,C,D,E)</text>
+  <text x="680" y="310" fill="#fbbf24" font-size="12">→ verify F</text>
+
+  <text x="470" y="340" fill="#7b4fb0" font-size="12">out[5]: p(· | A,B,C,D,E,F)</text>
+  <text x="680" y="340" fill="#4ade80" font-size="12">→ bonus!</text>
+
+  <!-- Key insight box -->
+  <rect x="30" y="370" width="720" height="110" rx="10" fill="#0d1b2a" stroke="#333" stroke-width="1"/>
+
+  <text x="390" y="398" fill="#e0e0e0" font-size="14" font-weight="bold" text-anchor="middle">Key Insight</text>
+
+  <text x="50" y="422" fill="#aaa" font-size="12">Transformers already compute next-token distributions at all positions simultaneously</text>
+  <text x="50" y="442" fill="#aaa" font-size="12">during training (teacher forcing). The causal mask ensures position i only sees tokens 0..i-1.</text>
+  <text x="50" y="466" fill="#aaa" font-size="12">Speculative decoding reuses this property: feed in [prefix + draft tokens], get all verification</text>
+  <text x="50" y="486" fill="#aaa" font-size="12">distributions in one pass. γ draft tokens → γ+1 distributions from 1 forward pass.</text>
+</svg>
