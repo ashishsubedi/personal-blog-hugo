@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 430" font-family="Consolas, monospace" font-size="13">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="780" height="430" rx="12" fill="url(#bgGrad3)"/>
+
+  <text x="390" y="32" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">Rejection Sampling: Accept/Reject Flow</text>
+
+  <!-- Token verification flow -->
+  <text x="40" y="70" fill="#888" font-size="12">For each draft token xᵢ:</text>
+
+  <!-- Step 1: Compute ratio -->
+  <rect x="40" y="85" width="700" height="50" rx="8" fill="#0d1b2a" stroke="#333" stroke-width="1"/>
+  <text x="60" y="108" fill="#7ec8e3" font-size="13">1.</text>
+  <text x="80" y="108" fill="#ccc" font-size="13">Compute acceptance probability:  α = min(1, p(xᵢ) / q(xᵢ))</text>
+  <text x="80" y="126" fill="#888" font-size="11">where p = target model prob, q = draft model prob</text>
+
+  <!-- Step 2: Draw random -->
+  <rect x="40" y="145" width="700" height="35" rx="8" fill="#0d1b2a" stroke="#333" stroke-width="1"/>
+  <text x="60" y="168" fill="#7ec8e3" font-size="13">2.</text>
+  <text x="80" y="168" fill="#ccc" font-size="13">Draw r ~ Uniform(0, 1)</text>
+
+  <!-- Branch -->
+  <text x="390" y="205" fill="#888" font-size="13" text-anchor="middle">if r &lt; α</text>
+
+  <!-- Accept branch (left) -->
+  <rect x="40" y="220" width="320" height="70" rx="8" fill="#1a3a2a" stroke="#40916c" stroke-width="1"/>
+  <text x="200" y="245" fill="#4ade80" text-anchor="middle" font-size="14" font-weight="bold">✓ ACCEPT</text>
+  <text x="200" y="268" fill="#aaa" text-anchor="middle" font-size="11">Target agrees (or likes it even more).</text>
+  <text x="200" y="282" fill="#aaa" text-anchor="middle" font-size="11">Keep xᵢ, move to xᵢ₊₁.</text>
+
+  <!-- Reject branch (right) -->
+  <rect x="420" y="220" width="320" height="70" rx="8" fill="#3a1a1a" stroke="#c62a4f" stroke-width="1"/>
+  <text x="580" y="245" fill="#f87171" text-anchor="middle" font-size="14" font-weight="bold">✗ REJECT</text>
+  <text x="580" y="268" fill="#aaa" text-anchor="middle" font-size="11">Target disagrees. Stop here.</text>
+  <text x="580" y="282" fill="#aaa" text-anchor="middle" font-size="11">Discard xᵢ and all subsequent drafts.</text>
+
+  <!-- Correction sampling -->
+  <rect x="40" y="310" width="700" height="100" rx="8" fill="#0d1b2a" stroke="#fbbf24" stroke-width="1"/>
+  <text x="390" y="335" fill="#fbbf24" text-anchor="middle" font-size="14" font-weight="bold">Correction / Bonus Token</text>
+
+  <text x="60" y="360" fill="#ccc" font-size="12">If rejected at position n: sample from  norm(max(0, p(x) - q(x)))</text>
+  <text x="60" y="380" fill="#888" font-size="11">This corrected distribution accounts for the probability mass already "used up" by rejection.</text>
+
+  <text x="60" y="400" fill="#ccc" font-size="12">If all accepted: sample bonus token from  p(x | prefix, x₁, ..., xᵧ)</text>
+</svg>

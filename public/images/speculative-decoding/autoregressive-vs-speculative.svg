@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 580" font-family="Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="bigGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e94560"/>
+      <stop offset="100%" stop-color="#c62a4f"/>
+    </linearGradient>
+    <linearGradient id="smallGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f3460"/>
+      <stop offset="100%" stop-color="#1a5276"/>
+    </linearGradient>
+    <linearGradient id="verifyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e94560"/>
+      <stop offset="100%" stop-color="#c62a4f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="580" rx="12" fill="url(#bgGrad)"/>
+
+  <!-- ==================== STANDARD AUTOREGRESSIVE ==================== -->
+  <text x="350" y="35" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">Standard Autoregressive Decoding</text>
+
+  <rect x="50" y="52" width="160" height="34" rx="6" fill="url(#bigGrad)" opacity="0.9"/>
+  <text x="130" y="74" fill="#fff" text-anchor="middle" font-size="12">Target Model</text>
+  <text x="225" y="74" fill="#7ec8e3" font-size="13">→ token₁</text>
+
+  <rect x="50" y="92" width="160" height="34" rx="6" fill="url(#bigGrad)" opacity="0.9"/>
+  <text x="130" y="114" fill="#fff" text-anchor="middle" font-size="12">Target Model</text>
+  <text x="225" y="114" fill="#7ec8e3" font-size="13">→ token₂</text>
+
+  <rect x="50" y="132" width="160" height="34" rx="6" fill="url(#bigGrad)" opacity="0.9"/>
+  <text x="130" y="154" fill="#fff" text-anchor="middle" font-size="12">Target Model</text>
+  <text x="225" y="154" fill="#7ec8e3" font-size="13">→ token₃</text>
+
+  <rect x="50" y="172" width="160" height="34" rx="6" fill="url(#bigGrad)" opacity="0.9"/>
+  <text x="130" y="194" fill="#fff" text-anchor="middle" font-size="12">Target Model</text>
+  <text x="225" y="194" fill="#7ec8e3" font-size="13">→ token₄</text>
+
+  <text x="350" y="194" fill="#aaa" font-size="12" text-anchor="middle">4 forward passes → 4 tokens</text>
+
+  <!-- ==================== DIVIDER ==================== -->
+  <line x1="50" y1="225" x2="650" y2="225" stroke="#444" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="350" y="220" fill="#555" font-size="11" text-anchor="middle">vs</text>
+
+  <!-- ==================== SPECULATIVE DECODING ==================== -->
+  <text x="350" y="258" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">Speculative Decoding</text>
+
+  <!-- Draft phase -->
+  <text x="50" y="283" fill="#8899aa" font-size="11">DRAFT (fast, sequential)</text>
+  <rect x="50" y="290" width="140" height="28" rx="5" fill="url(#smallGrad)" opacity="0.9"/>
+  <text x="120" y="309" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft → g₁</text>
+  <rect x="195" y="290" width="140" height="28" rx="5" fill="url(#smallGrad)" opacity="0.9"/>
+  <text x="265" y="309" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft → g₂</text>
+  <rect x="340" y="290" width="140" height="28" rx="5" fill="url(#smallGrad)" opacity="0.9"/>
+  <text x="410" y="309" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft → g₃</text>
+  <rect x="485" y="290" width="140" height="28" rx="5" fill="url(#smallGrad)" opacity="0.9"/>
+  <text x="555" y="309" fill="#7ec8e3" text-anchor="middle" font-size="11">Draft → g₄</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="324" x2="350" y2="340" stroke="#7ec8e3" stroke-width="2"/>
+  <polygon points="345,340 355,340 350,348" fill="#7ec8e3"/>
+
+  <!-- Verify phase -->
+  <text x="50" y="362" fill="#8899aa" font-size="11">VERIFY (one forward pass)</text>
+  <rect x="50" y="368" width="575" height="36" rx="6" fill="url(#verifyGrad)" opacity="0.9"/>
+  <text x="337" y="391" fill="#fff" text-anchor="middle" font-size="12">Target Model verifies [g₁, g₂, g₃, g₄]</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="410" x2="350" y2="426" stroke="#7ec8e3" stroke-width="2"/>
+  <polygon points="345,426 355,426 350,434" fill="#7ec8e3"/>
+
+  <!-- Result -->
+  <text x="50" y="450" fill="#8899aa" font-size="11">RESULT</text>
+  <text x="120" y="468" fill="#4ade80" font-size="14">g₁ ✓</text>
+  <text x="220" y="468" fill="#4ade80" font-size="14">g₂ ✓</text>
+  <text x="320" y="468" fill="#f87171" font-size="14">g₃ ✗</text>
+  <text x="420" y="468" fill="#666" font-size="14">g₄ (skipped)</text>
+
+  <text x="350" y="496" fill="#aaa" font-size="12" text-anchor="middle">1 target forward pass → 3 tokens (+ correction)</text>
+
+  <!-- Bottom summary box -->
+  <rect x="50" y="515" width="600" height="50" rx="8" fill="#0d1b2a" stroke="#333" stroke-width="1"/>
+  <text x="350" y="537" fill="#7ec8e3" text-anchor="middle" font-size="12">Standard: 4 passes × 140GB weight reads = 560GB total</text>
+  <text x="350" y="555" fill="#4ade80" text-anchor="middle" font-size="12">Speculative: 1 pass × 140GB = 140GB total (+ cheap draft overhead)</text>
+</svg>
