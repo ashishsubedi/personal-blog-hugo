@@ -11,7 +11,7 @@ If you’ve stumbled here by chance or curiosity, welcome! This is my personal c
 ### My Current Interests:
 
 - Agentic Workflow using LLMs
-- Trading & Stock Market Analysis
+- LLM in Security
 - Cloud Engineering/ Cloud Computing
 - Scalable and available systems
 
