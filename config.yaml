@@ -19,8 +19,8 @@ imaging:
     quality: 90
 
 params:
-  description: "Backend & AI Systems Engineer — LLM inference, reverse engineering, and production systems (mostly held together by caffeine and cache hits)."
-  homeMetaContent: "Ashish Subedi — Backend & AI Systems Engineer. Deep dives on LLM inference, reverse engineering, and production systems."
+  description: "Backend & AI Systems Engineer. LLM inference, reverse engineering, and production systems (mostly held together by caffeine and cache hits)."
+  homeMetaContent: "Ashish Subedi: Backend & AI Systems Engineer. Deep dives on LLM inference, reverse engineering, and production systems."
   footer: "Built with Hugo & stubborn curiosity. :)"
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006

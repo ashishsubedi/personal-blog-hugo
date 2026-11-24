@@ -3,7 +3,7 @@ title: "Speculative Decoding"
 date: 2026-06-03T00:12:34+02:00
 draft: false
 toc: true
-description: "How speculative decoding amortizes GPU memory bandwidth via parallel causal-mask verification and lossless rejection sampling—plus Speculative Speculative Decoding (SSD)."
+description: "How speculative decoding amortizes GPU memory bandwidth via parallel causal-mask verification and lossless rejection sampling, plus Speculative Speculative Decoding (SSD)."
 tags: [llm, inference, speculative-decoding, pytorch, systems]
 ---
 

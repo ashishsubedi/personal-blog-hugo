@@ -3,7 +3,7 @@ title: "I Kinda Understand LLM Serving"
 date: 2026-03-09T00:03:00+01:00
 draft: false
 toc: true
-description: "Building a continuous batching and PagedAttention LLM serving engine from scratch in PyTorch—and debugging RoPE position IDs and Apple Silicon MPS float16 NaNs."
+description: "Building a continuous batching and PagedAttention LLM serving engine from scratch in PyTorch, including debugging RoPE position IDs and Apple Silicon MPS float16 NaNs."
 tags: [llm, inference, vllm, paged-attention, pytorch]
 ---
 

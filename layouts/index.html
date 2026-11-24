@@ -3,7 +3,7 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
-    <h2><a href="/blog/">Writing</a></h2>
+    <h2><a href="/blog/">Recent Blogs</a></h2>
     <ul class="patterns-list">
       {{ $blogs := (where .Site.RegularPages "Type" "blog").ByPublishDate.Reverse }}
       {{ range first 4 $blogs }}
@@ -33,7 +33,7 @@
       <li>
         <h2><a href="https://chromewebstore.google.com/detail/folder-manager-for-google/jgikcdimpmdoofakjbggakjhbpidjbeo">Folder Manager for Google Docs</a></h2>
         <div class="date">Chrome Extension · 800+ active users · 4.5★</div>
-        <p class="post-summary">Sidebar folders for Google Docs, Sheets, and Slides—because searching Drive for <code>Untitled document (47)</code> shouldn't be a lifestyle.</p>
+        <p class="post-summary">Sidebar folders for Google Docs, Sheets, and Slides, because searching Drive for <code>Untitled document (47)</code> shouldn't be a lifestyle.</p>
       </li>
       <li>
         <h2><a href="https://github.com/ashishsubedi/agentHud">AgentHUD</a></h2>
