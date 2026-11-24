@@ -12,7 +12,9 @@
     <li class="pattern">
       {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
       {{ $active = or $active (eq .Name $current.Title) }}
+      {{ $active = or $active (and (eq .Name "Home") $current.IsHome) }}
       {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog")) }}
+      {{ $active = or $active (and (eq .Name "Dev Logs") (eq $current.Section "dlog")) }}
       {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
 
       <a href="{{ .URL }}" {{ if $active }}aria-current="page"{{ end }}>

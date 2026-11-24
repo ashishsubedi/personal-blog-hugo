@@ -3,11 +3,13 @@ title: "Speculative Decoding"
 date: 2026-06-03T00:12:34+02:00
 draft: false
 toc: true
+description: "How speculative decoding amortizes GPU memory bandwidth via parallel causal-mask verification and lossless rejection sampling—plus Speculative Speculative Decoding (SSD)."
+tags: [llm, inference, speculative-decoding, pytorch, systems]
 ---
 
 > This is part 2 of the LLM inference series. Part 1: [I Kinda Understand LLM Serving](/blog/i-kinda-understand-llm-deployment/).
 
-# Introduction
+## Introduction
 
 Greetings! In the [last post](/blog/i-kinda-understand-llm-deployment/), I went through continuous batching and PagedAttention. This time we are looking at **Speculative Decoding**, a technique that speeds up LLM generation without any loss in output quality.
 
@@ -22,7 +24,7 @@ And at the end I will cover *Speculative Speculative Decoding* [3], a recent pap
 
 ---
 
-# Autoregressive Inference
+## Autoregressive Inference
 
 Quick refresher on how decoding normally works.
 
@@ -67,7 +69,7 @@ One forward pass. One token. Repeat `max_new_tokens` times. For a 70B model gene
 
 ---
 
-# Speculative Decoding
+## Speculative Decoding
 
 The key observation is that not every token is equally hard to predict. If I am generating `The Eiffel Tower is located in ___`, the word "Paris" is dead obvious, a tiny model would get it right. But for complex multi-step reasoning or something creative, the big model's judgment matters a lot more.
 
@@ -81,7 +83,7 @@ The two models are:
 
 The win: if the small model gets 3 out of 4 tokens right, you got 3 tokens for the cost of roughly 1 big model call (plus some cheap small model calls).
 
-## How Parallel Verification Works
+### How Parallel Verification Works
 
 When the draft model gives you `[guess₁, guess₂, guess₃, guess₄]`, you need to know:
 - What would the target model predict at position 1 (given just the prefix)?
@@ -138,7 +140,7 @@ def get_target_distributions(target_model, prefix_ids, draft_ids):
 
 So you get `γ + 1` distributions out of a single forward pass. That is what makes the whole thing work.
 
-## The Rejection Sampling Algorithm
+### The Rejection Sampling Algorithm
 
 Here is the algorithm from [2]:
 
@@ -260,7 +262,7 @@ In practice you would want to be smarter about KV cache management (the draft mo
 
 ---
 
-# Results
+## Results
 
 Both papers show solid speedups.
 
@@ -274,7 +276,7 @@ The speedup you get in practice depends on the **acceptance rate**, how often th
 
 ---
 
-# Further Improvements: Speculative Speculative Decoding
+## Further Improvements: Speculative Speculative Decoding
 
 Standard speculative decoding still has one sequential dependency: you draft a batch, wait for verification, then draft the next batch. Even though verification is fast (one forward pass), you cannot start drafting the next batch until you know what got accepted.
 
@@ -290,7 +292,7 @@ I find this recursive application of the same trick to be a neat idea. Using spe
 
 ---
 
-# Wrapping Up
+## Wrapping Up
 
 The main takeaway: autoregressive decoding is bottlenecked by memory bandwidth, not compute. You are paying the cost of loading model weights for every single token. Speculative decoding amortizes that cost by verifying multiple tokens per target model call, using causal masking to make the verification parallel for free. And because of the rejection sampling math, the output is identical to what you would get from just running the big model.
 

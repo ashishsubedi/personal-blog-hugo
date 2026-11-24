@@ -1,7 +1,7 @@
 ---
 title: "Making My Life Easier with Bash/Zsh Function"
 date: 2023-01-14T09:02:39+05:45
-draft: false
+draft: true
 ---
 ### Intro
 

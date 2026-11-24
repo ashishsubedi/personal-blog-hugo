@@ -1,24 +1,9 @@
 ---
-title: "Home"
-date: 2022-01-12T23:55:25+05:45
+title: "Hey, I'm Ashish"
 ---
 
-Welcome! I’m Ashish, a software engineer with 4+ years of experience specializing in backend and system design. My expertise extends to ML, AI, and LLMs, encompassing everything from traditional machine learning algorithms to complex deep neural networks.
+Welcome aboard! I'm a Backend & AI Systems Engineer (and M.Sc. Computer Science student at Saarland University in Germany) who likes figuring out what systems are *actually* doing under the hood—whether that's LLM inference engines, production Document AI pipelines, or stubborn binaries and Bluetooth earbuds that refuse to tell my Mac their battery percentage.
 
+I believe in measuring before guessing—mostly because my guesses have a terrible cache hit rate.
 
-If you’ve stumbled here by chance or curiosity, welcome! This is my personal corner of the internet where I share a mix of thoughts and ideas—some practical, others just for fun. It’s a place for me to reflect on my experiences and interests, and I hope you find something that piques your interest as you browse around!
-
-### My Current Interests:
-
-- Agentic Workflow using LLMs
-- LLM in Security
-- Cloud Engineering/ Cloud Computing
-- Scalable and available systems
-
-
-
-### My Contacts
-
-[LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/)  
-[Github](https://github.com/ashishsubedi)  
-[Email](mailto:iamashishsubed@gmail.com)
+[GitHub](https://github.com/ashishsubedi) · [LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/) · [Email](mailto:iamashishsubedi@gmail.com) · [RSS](/index.xml)
