@@ -160,3 +160,52 @@
   });
 
 }());
+
+/* Responsive Table of Contents: open in right rail on wide screens, collapsed inline on narrow screens */
+(function () {
+  var tocs = document.querySelectorAll('details.toc-collapsible');
+  if (!tocs.length || !window.matchMedia) return;
+  var mq = window.matchMedia('(min-width: 88em)');
+  function syncToc(e) {
+    Array.prototype.forEach.call(tocs, function (toc) {
+      toc.open = e.matches;
+    });
+  }
+  syncToc(mq);
+  if (mq.addEventListener) {
+    mq.addEventListener('change', syncToc);
+  } else if (mq.addListener) {
+    mq.addListener(syncToc);
+  }
+}());
+
+/* Copy button for code blocks */
+(function () {
+  if (!navigator.clipboard) return;
+  var codeNodes = document.querySelectorAll('main pre > code');
+  Array.prototype.forEach.call(codeNodes, function (codeEl) {
+    var pre = codeEl.parentNode;
+    if (!pre || !pre.parentNode || pre.parentNode.classList.contains('code-block-wrapper')) {
+      return;
+    }
+    var wrapper = document.createElement('div');
+    wrapper.className = 'code-block-wrapper';
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'code-copy-btn';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(codeEl.innerText).then(function () {
+        btn.textContent = 'Copied!';
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+        }, 1500);
+      });
+    });
+    wrapper.appendChild(btn);
+  });
+}());

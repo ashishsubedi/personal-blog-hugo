@@ -1,6 +1,8 @@
 {{ if and (eq .Params.toc true) (in .TableOfContents "<li>") }}
-  <nav class="toc" aria-labelledby="toc-heading">
-    <strong id="toc-heading">{{ T "table_of_contents" }}</strong>
-    {{ .TableOfContents }}
-  </nav>
+  <details class="toc toc-collapsible">
+    <summary id="toc-heading">{{ T "table_of_contents" }}</summary>
+    <nav aria-labelledby="toc-heading">
+      {{ .TableOfContents }}
+    </nav>
+  </details>
 {{ end }}

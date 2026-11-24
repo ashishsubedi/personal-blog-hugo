@@ -36,7 +36,7 @@ params:
 
   author:
     name: Ashish Subedi
-    email: iamashishsubedi@gmail.com
+    email: asubedi@asubedi.com.np
 
 menu:
   nav:
@@ -95,5 +95,5 @@ markup:
     style: monokai
     tabWidth: 4
   tableOfContents:
-    endLevel: 6
+    endLevel: 3
     startLevel: 2

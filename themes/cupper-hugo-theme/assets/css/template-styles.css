@@ -321,7 +321,7 @@ caption {
 .wrapper {
     position: relative;
     margin-top: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 .intro-and-nav {
     font-size: 0.8rem;
@@ -442,6 +442,121 @@ caption {
 .toc ol {
     margin-left: 0.75rem;
     margin-top: 0.5rem;
+}
+
+/* Blog layout & collapsible/sticky TOC */
+.blog-header {
+    max-width: 40rem;
+}
+.blog-layout {
+    margin-top: 1.5rem;
+}
+.blog-toc-aside {
+    margin-top: 0;
+}
+.blog-content {
+    margin-top: 1.5rem;
+    max-width: 40rem;
+}
+.blog-content > :first-child {
+    margin-top: 0;
+}
+.toc-collapsible {
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+    border: 1px solid;
+    font-size: 0.85rem;
+}
+.toc-collapsible summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style-position: outside;
+    margin-left: 1rem;
+}
+.toc-collapsible nav {
+    margin-top: 0.75rem;
+}
+.toc-collapsible ul {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 0.35rem;
+}
+.toc-collapsible ul ul {
+    margin-left: 1rem;
+    margin-top: 0.25rem;
+}
+.toc-collapsible li + li {
+    margin-top: 0.3rem;
+}
+.toc-collapsible a {
+    border-bottom: none;
+    opacity: 0.85;
+}
+.toc-collapsible a:hover,
+.toc-collapsible a:focus {
+    border-bottom: 1px solid;
+    opacity: 1;
+}
+
+@media screen and (min-width: 88em) {
+    .main-and-footer > div:has(.has-toc) {
+        max-width: 59rem;
+    }
+    .has-toc .blog-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 40rem) 16rem;
+        column-gap: 2.5rem;
+        align-items: start;
+    }
+    .has-toc .blog-content {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 0;
+    }
+    .has-toc .blog-toc-aside {
+        grid-column: 2;
+        grid-row: 1;
+        position: sticky;
+        top: 2.25rem;
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+    }
+    .has-toc .toc-collapsible {
+        border: 0;
+        border-left: 1px solid;
+        padding: 0 0 0 1rem;
+        font-size: 0.78rem;
+    }
+    .has-toc .toc-collapsible summary {
+        list-style: none;
+        margin-left: 0;
+    }
+    .has-toc .toc-collapsible summary::-webkit-details-marker {
+        display: none;
+    }
+}
+
+/* Code copy buttons */
+.code-block-wrapper {
+    position: relative;
+}
+.code-copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.25rem;
+    background: #111;
+    color: #fefefe;
+    border: 1px solid #444;
+    cursor: pointer;
+    opacity: 0.75;
+    margin-top: 0;
+}
+.code-copy-btn:hover,
+.code-copy-btn:focus {
+    opacity: 1;
 }
 
 /* Disqus Comments */
