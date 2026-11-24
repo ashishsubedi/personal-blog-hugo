@@ -1,0 +1,21 @@
+{{- $lang := .Type -}}
+{{- $collapsible := .Attributes.collapsible | default false -}}
+{{- $open := .Attributes.open | default false -}}
+{{- $title := .Attributes.title -}}
+{{- $lineCount := len (split (strings.TrimRight "\n" .Inner) "\n") -}}
+{{- if $collapsible -}}
+<details class="code-collapsible"{{ if $open }} open{{ end }}>
+  <summary>
+    {{- if $title -}}
+      {{ $title }} ({{ $lineCount }} lines)
+    {{- else if $lang -}}
+      Code: {{ $lang }} ({{ $lineCount }} lines)
+    {{- else -}}
+      Code ({{ $lineCount }} lines)
+    {{- end -}}
+  </summary>
+  <pre><code{{ with $lang }} class="language-{{ . }}"{{ end }}>{{ .Inner }}</code></pre>
+</details>
+{{- else -}}
+<pre><code{{ with $lang }} class="language-{{ . }}"{{ end }}>{{ .Inner }}</code></pre>
+{{- end -}}

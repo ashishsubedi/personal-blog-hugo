@@ -444,28 +444,15 @@ caption {
     margin-top: 0.5rem;
 }
 
-/* Blog layout & collapsible/sticky TOC */
-.blog-header {
-    max-width: 40rem;
-}
-.blog-layout {
-    margin-top: 1.5rem;
-}
-.blog-toc-aside {
-    margin-top: 0;
-}
-.blog-content {
-    margin-top: 1.5rem;
-    max-width: 40rem;
-}
-.blog-content > :first-child {
-    margin-top: 0;
-}
+/* Collapsible TOC */
 .toc-collapsible {
     padding: 0.75rem 1rem;
-    margin-top: 0;
+    margin-top: 1.25rem;
     border: 1px solid;
     font-size: 0.85rem;
+}
+.toc-collapsible + * {
+    margin-top: 1.5rem;
 }
 .toc-collapsible summary {
     cursor: pointer;
@@ -498,44 +485,6 @@ caption {
     opacity: 1;
 }
 
-@media screen and (min-width: 88em) {
-    .main-and-footer > div:has(.has-toc) {
-        max-width: 59rem;
-    }
-    .has-toc .blog-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 40rem) 16rem;
-        column-gap: 2.5rem;
-        align-items: start;
-    }
-    .has-toc .blog-content {
-        grid-column: 1;
-        grid-row: 1;
-        margin-top: 0;
-    }
-    .has-toc .blog-toc-aside {
-        grid-column: 2;
-        grid-row: 1;
-        position: sticky;
-        top: 2.25rem;
-        max-height: calc(100vh - 4.5rem);
-        overflow-y: auto;
-    }
-    .has-toc .toc-collapsible {
-        border: 0;
-        border-left: 1px solid;
-        padding: 0 0 0 1rem;
-        font-size: 0.78rem;
-    }
-    .has-toc .toc-collapsible summary {
-        list-style: none;
-        margin-left: 0;
-    }
-    .has-toc .toc-collapsible summary::-webkit-details-marker {
-        display: none;
-    }
-}
-
 /* Code copy buttons */
 .code-block-wrapper {
     position: relative;
@@ -557,6 +506,29 @@ caption {
 .code-copy-btn:hover,
 .code-copy-btn:focus {
     opacity: 1;
+}
+
+/* Collapsible code blocks */
+.code-collapsible {
+    border: 1px solid;
+    padding: 0;
+}
+.code-collapsible summary {
+    cursor: pointer;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    list-style-position: inside;
+}
+.code-collapsible[open] summary {
+    border-bottom: 1px solid;
+}
+.code-collapsible .code-block-wrapper,
+.code-collapsible pre,
+.code-collapsible pre[class*=language-] {
+    margin-top: 0;
+    border: 0;
 }
 
 /* Disqus Comments */

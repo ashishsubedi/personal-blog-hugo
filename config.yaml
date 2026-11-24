@@ -86,7 +86,7 @@ markup:
       unsafe: true
       xHTML: false
   highlight:
-    codeFences: false
+    codeFences: true
     hl_Lines: ""
     lineNoStart: 1
     lineNos: false

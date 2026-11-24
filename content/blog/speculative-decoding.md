@@ -185,7 +185,7 @@ Step 4 keeps the output distribution exactly correct. When we reject a token, in
 
 Here is the full speculative decoding step in code:
 
-```python
+```python {collapsible=true title="Full speculative_decode_step() in PyTorch"}
 import torch
 import torch.nn.functional as F
 

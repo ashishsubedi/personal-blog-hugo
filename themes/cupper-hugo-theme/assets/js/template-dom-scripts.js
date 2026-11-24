@@ -161,24 +161,6 @@
 
 }());
 
-/* Responsive Table of Contents: open in right rail on wide screens, collapsed inline on narrow screens */
-(function () {
-  var tocs = document.querySelectorAll('details.toc-collapsible');
-  if (!tocs.length || !window.matchMedia) return;
-  var mq = window.matchMedia('(min-width: 88em)');
-  function syncToc(e) {
-    Array.prototype.forEach.call(tocs, function (toc) {
-      toc.open = e.matches;
-    });
-  }
-  syncToc(mq);
-  if (mq.addEventListener) {
-    mq.addEventListener('change', syncToc);
-  } else if (mq.addListener) {
-    mq.addListener(syncToc);
-  }
-}());
-
 /* Copy button for code blocks */
 (function () {
   if (!navigator.clipboard) return;
