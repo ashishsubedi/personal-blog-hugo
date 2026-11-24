@@ -109,7 +109,7 @@ A transformer's forward pass over a sequence of length `n` already computes next
 
 In PyTorch, this forward pass looks like:
 
-```python
+```python {title="get_target_distributions() in PyTorch"}
 import torch
 import torch.nn.functional as F
 
@@ -144,7 +144,7 @@ So you get `γ + 1` distributions out of a single forward pass. That is what mak
 
 Here is the algorithm from [2]:
 
-```
+```text {title="Algorithm: SpeculativeDecodingStep"}
 Algorithm: SpeculativeDecodingStep
 ────────────────────────────────────────────────────────────────
 Inputs: Mp (target model), Mq (draft model), prefix
@@ -185,7 +185,7 @@ Step 4 keeps the output distribution exactly correct. When we reject a token, in
 
 Here is the full speculative decoding step in code:
 
-```python {collapsible=true title="Full speculative_decode_step() in PyTorch"}
+```python {title="Full speculative_decode_step() in PyTorch"}
 import torch
 import torch.nn.functional as F
 

@@ -26,6 +26,7 @@ params:
   dateFormat: Jan 2, 2006
   codePenUser: darkVapour
   katex: true
+  codeCollapseLines: 25
   hideHeaderLinks: true
   search: true
   showThemeSwitcher: true
