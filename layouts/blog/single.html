@@ -34,14 +34,15 @@
       {{ end }}
     </div>
 
-    {{ if $hasToc }}
-      <aside class="blog-toc-aside">
-        {{ partial "toc.html" . }}
-      </aside>
-    {{ end }}
-
-    <article class="blog-content">
-      {{ .Content }}
-    </article>
+    <div class="blog-layout">
+      {{ if $hasToc }}
+        <aside class="blog-toc-aside">
+          {{ partial "toc.html" . }}
+        </aside>
+      {{ end }}
+      <article class="blog-content">
+        {{ .Content }}
+      </article>
+    </div>
   </main>
 {{ end }}

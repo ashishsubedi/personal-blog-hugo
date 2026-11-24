@@ -446,10 +446,14 @@ caption {
 
 /* Blog layout & right-side sticky TOC */
 .blog-header {
+    max-width: 44rem;
     margin-top: 0;
 }
+.blog-layout {
+    margin-top: 1.5rem;
+}
 .blog-toc-aside {
-    margin-top: 1.25rem;
+    margin-top: 0;
 }
 .blog-content {
     margin-top: 1.5rem;
@@ -479,21 +483,25 @@ caption {
     margin-top: 0.35rem;
 }
 .toc-collapsible ul ul {
-    margin-left: 0.85rem;
-    margin-top: 0.2rem;
+    margin-left: 0.9rem;
+    margin-top: 0.25rem;
 }
 .toc-collapsible li + li {
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
 }
 .toc-collapsible a {
     border-bottom: none;
-    opacity: 0.65;
+    opacity: 0.82;
     transition: opacity 0.15s ease;
 }
 .toc-collapsible a:hover,
 .toc-collapsible a:focus,
 .toc-collapsible a.toc-active {
     opacity: 1;
+}
+.toc-collapsible a:hover,
+.toc-collapsible a:focus {
+    border-bottom: 1px solid;
 }
 .toc-collapsible a.toc-active {
     font-weight: bold;
@@ -504,52 +512,40 @@ caption {
         max-width: 64rem;
         padding: 2.25rem 1.5rem 2.25rem 2.25rem;
     }
-    .has-toc {
+    .has-toc .blog-layout {
         display: grid;
-        grid-template-columns: minmax(0, 44rem) 12.5rem;
-        grid-template-rows: auto 1fr;
+        grid-template-columns: minmax(0, 44rem) 13.5rem;
         column-gap: 2.25rem;
         align-items: start;
     }
-    .has-toc .blog-header {
-        grid-column: 1;
-        grid-row: 1;
-    }
     .has-toc .blog-content {
         grid-column: 1;
-        grid-row: 2;
-        margin-top: 1.5rem;
+        grid-row: 1;
+        margin-top: 0;
     }
     .has-toc .blog-toc-aside {
         grid-column: 2;
-        grid-row: 1 / -1;
+        grid-row: 1;
         position: sticky;
         top: 2.25rem;
         max-height: calc(100vh - 4.5rem);
         overflow-y: auto;
-        margin-top: 0;
     }
     .has-toc .toc-collapsible {
         border: 0;
-        border-left: 1px solid rgba(17, 17, 17, 0.2);
-        padding: 0 0 0 0.9rem;
-        font-size: 0.72rem;
-        line-height: 1.35;
+        border-left: 1px solid;
+        padding: 0 0 0 1rem;
+        font-size: 0.78rem;
+        line-height: 1.4;
     }
     .has-toc .toc-collapsible summary {
         list-style: none;
         margin-left: 0;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        opacity: 0.6;
+        font-size: 0.85rem;
         pointer-events: none;
     }
     .has-toc .toc-collapsible summary::-webkit-details-marker {
         display: none;
-    }
-    .has-toc .toc-collapsible nav {
-        margin-top: 0.6rem;
     }
 }
 
