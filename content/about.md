@@ -32,4 +32,4 @@ This corner of the internet holds two things:
 
 If you want to talk systems, AI security, or swap war stories about `float16` `NaN`s:
 
-[Resume](/resume.pdf) · [GitHub](https://github.com/ashishsubedi) · [LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/) · [Email](mailto:asubedi@asubedi.com.np) · [RSS](/index.xml)
+[Resume](/resume.pdf) · [GitHub](https://github.com/ashishsubedi) · [LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/) · [Email](mailto:iamashishsubedi@gmail.com) · [RSS](/index.xml)
