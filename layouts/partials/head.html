@@ -6,15 +6,37 @@
   {{ hugo.Generator }}
   <link rel="canonical" href="{{ .Permalink }}" />
 
+  {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}
-    {{ with .Site.Params.homeMetaContent }}
-      <meta name="description" content="{{ . | plainify }}">
-    {{ end }}
-  {{ else }}
-    {{ $summary := trim (.Summary | plainify | htmlUnescape) "\n\r"
-      | default .Title }}
-    <meta name="description" content="{{ $summary }}">
+    {{ $title = .Site.Title }}
   {{ end }}
+
+  {{ $desc := "" }}
+  {{ if .IsHome }}
+    {{ $desc = .Site.Params.homeMetaContent | default .Site.Params.description | plainify }}
+  {{ else }}
+    {{ $desc = .Description | default (trim (.Summary | plainify | htmlUnescape) "\n\r") | default .Title }}
+  {{ end }}
+  {{ with $desc }}
+    <meta name="description" content="{{ . }}">
+  {{ end }}
+
+  {{ $ogTitle := cond .IsHome $title .Title }}
+  {{ $ogType := cond .IsPage "article" "website" }}
+  {{ $ogImage := (.Params.image | default "images/me.jpg") | absURL }}
+  <meta property="og:title" content="{{ $ogTitle }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:type" content="{{ $ogType }}">
+  <meta property="og:image" content="{{ $ogImage }}">
+  {{ if and .IsPage (not .PublishDate.IsZero) }}
+    <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ end }}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ $ogTitle }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+  <meta name="twitter:image" content="{{ $ogImage }}">
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | absURL }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}"> 
@@ -42,6 +64,7 @@
     }
 
     img:not([src*=".svg"]),
+    main img[src*="/images/"][src$=".svg"],
     .colors,
     iframe,
     .demo-container {
@@ -59,10 +82,6 @@
     <link rel="stylesheet" href="{{ . | relURL }}">
   {{ end }}
 
-  {{ $title := print .Title " | " .Site.Title }}
-  {{ if .IsHome }}
-    {{ $title = .Site.Title }}
-  {{ end }}
   <title>{{ $title }}</title>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);

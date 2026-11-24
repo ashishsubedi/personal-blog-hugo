@@ -3,13 +3,15 @@ title: "Reverse Engineering OP Nord Buds 2 with AI"
 date: 2026-09-04T17:30:00+02:00
 draft: false
 toc: true
+description: "Sniffing Android HCI logs and reverse-engineering OnePlus Nord Buds 2's classic RFCOMM battery protocol to build a macOS IOBluetooth menu bar plugin."
+tags: [reverse-engineering, bluetooth, macos, swift, hardware]
 ---
 
 > Muse Spark 1.3 used for the reverse engineering process and help with the blog
 
 One thing before we start. I saw that Muse Spark 1.3 had launched with crazy benchmaxx, and it was free to use through [opencode](https://opencode.ai). I decided to test it on this genuinely messy reverse engineering task with no existing documentation.
 
-# Why bother
+## Why bother
 
 I use OnePlus Nord Buds 2 which works great with my Android device. The problem is I sometimes forget to charge it. It's quite visible in my phone. I also use it with my macbook, but the battery information is not present. I put a small
 [SwiftBar](https://github.com/swiftbar/SwiftBar) plugin in the menu bar that shows
@@ -17,7 +19,7 @@ the buds' battery.
 
 While it worked great, it only showed a single number that's shared to the mac by the device. On Android, HeyMelody app shows all three individual battery levels (including case). On macOS, there's no official support for this. The hardware link is present obviously, but the numbers are locked behind a phone app.
 
-# Existing solutions
+## Existing solutions
 
 In short, nothing specific exists for my hardware. However I did find the following: 
  **[cracked-oneplus-buds](https://github.com/AasheeshLikePanner/cracked-oneplus-buds)**
@@ -25,9 +27,9 @@ In short, nothing specific exists for my hardware. However I did find the follow
   My Nord Buds 2 is listed as likely compatible. But in my testing, it's not.
 
 
-# Process
+## Process
 
-## 1. Testing the existing solution
+### 1. Testing the existing solution
 
 I started with the existing script that I found. I ran the OPOv1 tooling
 against my buds and got `FOUND → Connected → Timeout`. Three times. Connected
@@ -44,7 +46,7 @@ and no ATT traffic whatsoever.
 
 With this finding, the thing that got clear is that my buds didn't talk over BLE, but rather the classic stream.
 
-## 2. Asking the phone for ground truth
+### 2. Asking the phone for ground truth
 
 I enabled HCI snoop logging on Android, opened HeyMelody, refreshed the battery screen a few times, and pulled
 a bug report. (Side note: on modern Android you can't just
@@ -68,7 +70,7 @@ The tail is count-prefixed pairs: `02` entries, `[01]=0x32=50`,
 `01` is left, `02` is right. I won't pretend I saw it instantly. The script
 found the pattern, which I then confirmed against the app. I was quite surprised that it actually just worked. It did take some hit and trial to get to this point, but Muse held up pretty great.
 
-## 3. Finding the channel on the Mac
+### 3. Finding the channel on the Mac
 
 With the protocol understood, the Mac still needed to get this information.
 I pointed Spark at the buds' SDP records (address from `system_profiler`),
@@ -97,7 +99,7 @@ Same numbers as the phone.
 Also found the buds push unsolicited `04 02` broadcasts on connect
 carrying the same triple. Free battery updates without even asking.
 
-## 4. The missing case
+### 4. The missing case
 
 Out of the case, the reply holds 2 entries. I docked the buds, re-ran, and it
 grew to 3:
@@ -114,7 +116,7 @@ of position, I ran a sweep across category bytes and watched which slots moved:
 So the parser reads the count `N` and walks `N` `(id, pct)` pairs instead of
 assuming fixed offsets. Both docked and undocked replies decode cleanly.
 
-# Result
+## Result
 
 Two pieces, both in the [repo](https://github.com/ashishsubedi/nord-buds-2-mac-battery):
 
@@ -131,7 +133,7 @@ Two pieces, both in the [repo](https://github.com/ashishsubedi/nord-buds-2-mac-b
 I verified it across a charge cycle (50/40, then 50/50, then 100/100 with a
 90 case), matching HeyMelody every single time. That's my menu bar now.
 
-# Limitations
+## Limitations
 
 I'll be honest about the rough edges, because there are a few:
 

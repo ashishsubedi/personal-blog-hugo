@@ -1,7 +1,8 @@
 {{ define "main" }}
   <main id="main">
 
-    <h1>{{ .Title }}</h1>    
+    <h1>{{ .Title }}</h1>
+    {{ if not .PublishDate.IsZero }}
     <div class="date">
       {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
       {{ $publishDate := .PublishDate }}
@@ -10,10 +11,15 @@
       {{ if gt . $publishDate }}
           <br>
           <strong>{{ T "last_updated" }} </strong>{{ .Format $dateFormat }}
-          {{ end }}
-          {{ end }}
-        </div>
-        {{ template "dlog-toc-v2" . }}
-        {{ .Content }}
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ if eq .Section "dlog" }}
+      {{ template "dlog-toc-v2" . }}
+    {{ else }}
+      {{ partial "toc.html" . }}
+    {{ end }}
+    {{ .Content }}
   </main>
 {{ end }}

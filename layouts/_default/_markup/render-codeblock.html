@@ -1,0 +1,29 @@
+{{- $lang := .Type -}}
+{{- $lineCount := len (split (strings.TrimRight "\n" .Inner) "\n") -}}
+{{- $lineLabel := cond (eq $lineCount 1) "1 line" (printf "%d lines" $lineCount) -}}
+{{- $threshold := site.Params.codeCollapseLines | default 25 -}}
+{{- $collapsible := true -}}
+{{- if isset .Attributes "collapsible" -}}
+  {{- $collapsible = .Attributes.collapsible -}}
+{{- end -}}
+{{- $open := le $lineCount $threshold -}}
+{{- if isset .Attributes "open" -}}
+  {{- $open = .Attributes.open -}}
+{{- end -}}
+{{- $title := .Attributes.title -}}
+{{- if $collapsible -}}
+<details class="code-collapsible"{{ if $open }} open{{ end }}>
+  <summary>
+    {{- if $title -}}
+      {{ $title }} ({{ $lineLabel }})
+    {{- else if $lang -}}
+      {{ $lang }} ({{ $lineLabel }})
+    {{- else -}}
+      Code ({{ $lineLabel }})
+    {{- end -}}
+  </summary>
+  <pre><code{{ with $lang }} class="language-{{ . }}"{{ end }}>{{ .Inner }}</code></pre>
+</details>
+{{- else -}}
+<pre><code{{ with $lang }} class="language-{{ . }}"{{ end }}>{{ .Inner }}</code></pre>
+{{- end -}}
