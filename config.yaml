@@ -50,6 +50,9 @@ menu:
     - name: About
       url: /about/
       weight: 3
+    - name: Resume
+      url: /resume.pdf
+      weight: 4
     - name: Dev Logs
       url: /dlog/
       weight: 5

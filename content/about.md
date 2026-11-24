@@ -8,7 +8,8 @@ Greetings! I’m Ashish Subedi, a Backend & AI Systems Engineer with ~5 years of
 
 ## What I've Shipped
 
-- **Evana AG** (Germany): AI Work Student building RAG pipelines with hybrid embeddings, MistralOCR bounding-box layout retrieval, and production Go document services.
+- **RTKData.com** (Germany): Backend Software Engineer (Werkstudent) building high-throughput Go infrastructure for low-latency RTK/GNSS correction streams, automated rover failover, dynamic base-station switchover, and multi-rover SLO load testing.
+- **Evana AG** (Germany): AI & Backend Software Engineer (Werkstudent) who shipped Go and Python document pipelines, MistralOCR bounding-box layout retrieval, and hybrid-embedding RAG improvements.
 - **Docsumo** (Singapore, Remote): 3.5+ years as a Python Engineer shipping LLM/OCR extraction systems, fast ETL pipelines, and an architectural overhaul that cut document processing costs by 9x (the rare kind of refactor that makes both engineers and CFOs smile).
 - **Earlier Stops**: Migrated legacy services to AWS/EKS and built PostgreSQL usage-metering stored procedures at **Belvy LLC**, and worked on ML/CNN research at **NAAMI**.
 
@@ -31,4 +32,4 @@ This corner of the internet holds two things:
 
 If you want to talk systems, AI security, or swap war stories about `float16` `NaN`s:
 
-[GitHub](https://github.com/ashishsubedi) · [LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/) · [Email](mailto:asubedi@asubedi.com.np) · [RSS](/index.xml)
+[Resume](/resume.pdf) · [GitHub](https://github.com/ashishsubedi) · [LinkedIn](https://www.linkedin.com/in/ashish-s-4692b810b/) · [Email](mailto:asubedi@asubedi.com.np) · [RSS](/index.xml)
