@@ -321,7 +321,7 @@ caption {
 .wrapper {
     position: relative;
     margin-top: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 .intro-and-nav {
     font-size: 0.8rem;
@@ -444,6 +444,160 @@ caption {
     margin-top: 0.5rem;
 }
 
+/* Blog layout & right-side sticky TOC */
+.blog-header {
+    margin-top: 0;
+    min-width: 0;
+}
+.blog-toc-aside {
+    margin-top: 1.25rem;
+}
+.blog-content {
+    margin-top: 1.5rem;
+    min-width: 0;
+}
+.blog-content > :first-child {
+    margin-top: 0;
+}
+.toc-collapsible {
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+    border: 1px solid;
+    font-size: 0.85rem;
+}
+.toc-collapsible summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style-position: outside;
+    margin-left: 1rem;
+}
+.toc-collapsible nav {
+    margin-top: 0.75rem;
+}
+.toc-collapsible ul {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 0.35rem;
+}
+.toc-collapsible ul ul {
+    margin-left: 0.9rem;
+    margin-top: 0.25rem;
+}
+.toc-collapsible li + li {
+    margin-top: 0.3rem;
+}
+.toc-collapsible a {
+    border-bottom: none;
+    opacity: 0.82;
+    transition: opacity 0.15s ease;
+}
+.toc-collapsible a:hover,
+.toc-collapsible a:focus,
+.toc-collapsible a.toc-active {
+    opacity: 1;
+}
+.toc-collapsible a:hover,
+.toc-collapsible a:focus {
+    border-bottom: 1px solid;
+}
+.toc-collapsible a.toc-active {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 80em) {
+    .main-and-footer > div:has(.has-toc) {
+        max-width: 64rem;
+        padding: 2.25rem;
+    }
+    .has-toc {
+        display: grid;
+        grid-template-columns: minmax(0, 44rem) 13rem;
+        grid-template-rows: auto 1fr;
+        column-gap: 2.25rem;
+        align-items: start;
+    }
+    .has-toc .blog-header {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .has-toc .blog-content {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 1.5rem;
+    }
+    .has-toc .blog-toc-aside {
+        grid-column: 2;
+        grid-row: 2;
+        position: sticky;
+        top: 2.25rem;
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+        margin-top: 1.5rem;
+    }
+    .has-toc .toc-collapsible {
+        border: 0;
+        border-left: 1px solid;
+        padding: 0 0 0 1rem;
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+    .has-toc .toc-collapsible summary {
+        list-style: none;
+        margin-left: 0;
+        font-size: 0.85rem;
+        pointer-events: none;
+    }
+    .has-toc .toc-collapsible summary::-webkit-details-marker {
+        display: none;
+    }
+}
+
+/* Code copy buttons */
+.code-block-wrapper {
+    position: relative;
+}
+.code-copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.25rem;
+    background: #111;
+    color: #fefefe;
+    border: 1px solid #444;
+    cursor: pointer;
+    opacity: 0.75;
+    margin-top: 0;
+}
+.code-copy-btn:hover,
+.code-copy-btn:focus {
+    opacity: 1;
+}
+
+/* Collapsible code blocks */
+.code-collapsible {
+    border: 1px solid;
+    padding: 0;
+}
+.code-collapsible summary {
+    cursor: pointer;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.55rem 0.9rem;
+    list-style-position: inside;
+}
+.code-collapsible[open] summary {
+    border-bottom: 1px solid;
+}
+.code-collapsible .code-block-wrapper,
+.code-collapsible pre,
+.code-collapsible pre[class*=language-] {
+    margin-top: 0;
+    border: 0;
+}
+
 /* Disqus Comments */
 #disqus-container {
   text-align: center;
@@ -495,6 +649,11 @@ caption {
 .date {
     margin-top: 0;
     font-size: 0.85rem;
+}
+.post-summary {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
 }
 
 /* Notes and warnings */
